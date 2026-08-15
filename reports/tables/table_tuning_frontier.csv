@@ -1,0 +1,26 @@
+budget_pct,policy_family,status,candidate,realized_friction_pct,malicious_allow_pct,malicious_not_isolated_pct,transitions_per_observed_rnti_minute,episode_coverage_pct,median_capped_delay_s
+0.100000,Friction-budgeted,no budget matched candidate,,,,,,,
+0.100000,Stateless,budget reference,stateless-reference-0.001,0.096873,36.316988,36.316988,5.306963,75.384615,1.000000
+0.100000,EWMA,selected,ewma-template-002-B0.001,0.096873,35.421332,35.421332,3.071545,73.286713,1.000000
+0.100000,Two-report,no budget matched candidate,,,,,,,
+0.100000,Symmetric hysteresis,no budget matched candidate,,,,,,,
+0.500000,Friction-budgeted,selected,proposed-template-044-B0.005,0.497728,27.043215,34.770115,4.455751,78.741259,1.000000
+0.500000,Stateless,budget reference,stateless-reference-0.005,0.497728,30.370205,30.370205,6.084187,83.356643,1.000000
+0.500000,EWMA,selected,ewma-template-002-B0.005,0.497728,27.435065,27.435065,3.727373,79.160839,1.000000
+0.500000,Two-report,coverage inferior,n_report-template-000-B0.005,0.497728,29.663009,33.497537,1.685902,62.517483,3.000000
+0.500000,Symmetric hysteresis,insufficient transition reduction,symmetric_hysteresis-template-003-B0.005,0.497728,26.877146,32.335050,4.628867,79.160839,1.000000
+1.000000,Friction-budgeted,selected,proposed-template-047-B0.01,0.998797,23.359830,30.043663,2.479648,81.678322,1.000000
+1.000000,Stateless,budget reference,stateless-reference-0.01,0.998797,26.845425,26.845425,6.759410,84.895105,1.000000
+1.000000,EWMA,selected,ewma-template-002-B0.01,0.998797,21.956635,21.956635,3.582272,80.699301,1.000000
+1.000000,Two-report,coverage inferior,n_report-template-000-B0.01,0.988776,23.680773,28.192641,2.029978,76.363636,2.000000
+1.000000,Symmetric hysteresis,insufficient transition reduction,symmetric_hysteresis-template-003-B0.01,0.995457,22.219734,28.929691,5.573460,82.657343,1.000000
+2.000000,Friction-budgeted,selected,proposed-template-020-B0.02,1.994254,19.948873,26.580460,1.780002,81.958042,1.000000
+2.000000,Stateless,budget reference,stateless-reference-0.02,1.997595,22.527616,22.527616,6.828369,86.293706,1.000000
+2.000000,EWMA,selected,ewma-template-002-B0.02,1.997595,17.461561,17.461561,3.064362,82.097902,1.000000
+2.000000,Two-report,coverage inferior,n_report-template-000-B0.02,1.994254,17.502612,22.329825,2.203812,79.300699,2.000000
+2.000000,Symmetric hysteresis,insufficient transition reduction,symmetric_hysteresis-template-003-B0.02,1.994254,17.263771,24.727571,6.280289,84.475524,1.000000
+5.000000,Friction-budgeted,isolation inferior,proposed-template-029-B0.05,4.990647,12.067100,24.283475,1.307346,84.195804,1.000000
+5.000000,Stateless,budget reference,stateless-reference-0.05,4.997328,16.836468,16.836468,6.051863,88.531469,1.000000
+5.000000,EWMA,selected,ewma-template-002-B0.05,4.997328,13.485222,13.485222,2.463844,84.615385,1.000000
+5.000000,Two-report,coverage inferior,n_report-template-000-B0.05,4.993987,12.960890,16.317734,1.943061,81.258741,2.000000
+5.000000,Symmetric hysteresis,insufficient transition reduction,symmetric_hysteresis-template-003-B0.05,4.993987,12.244365,18.245260,6.042525,86.573427,1.000000

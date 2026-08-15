@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Proposal minus stateless-reference per-attack contrasts with 95\% trace-block bootstrap intervals. Slowloris is the explicit failure mode.}
+\label{tab:per-attack}
+\begin{tabular}{lrrrrrr}
+\hline
+Attack & Episodes & Delta ALLOW (pp) & ALLOW CI low & ALLOW CI high & Delta coverage (pp) & Delta mean delay (s) \\
+\hline
+Port scan & 248 & -7.975 & -8.776 & -7.277 & 5.242 & -0.310 \\
+DDoS/Ripper & 164 & -8.257 & -9.684 & -7.049 & 0.000 & 0.030 \\
+DoS/Hulk & 146 & -3.639 & -4.812 & -2.667 & 4.110 & 0.021 \\
+Slowloris & 272 & 1.227 & -0.493 & 3.153 & -6.985 & 4.210 \\
+\hline
+\end{tabular}
+\end{table}

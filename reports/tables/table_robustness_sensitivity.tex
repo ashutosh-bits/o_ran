@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Robustness and sensitivity results. Failed or unsupported analyses remain explicit.}
+\label{tab:robustness}
+\begin{tabular}{lrrrrr}
+\hline
+Analysis & Change & Delta ALLOW (pp) & Delta coverage (pp) & Churn ratio & Evidence status \\
+\hline
+Primary logistic score & 15-min trace blocks & -4.482 & -2.793 & 0.426 & 4/4 predeclared gates pass; friction UCB crosses 1\% \\
+Numeric-RNTI stratum & Seen numeric RNTI (470 values) & -4.693 & -3.319 & 0.414 & 4/4 pairwise gates pass; friction point within 1\% and UCB within 1\% \\
+Numeric-RNTI stratum & Unseen numeric RNTI (274 values) & -4.176 & -2.000 & 0.446 & 4/4 pairwise gates pass; friction point above 1\% and UCB above 1\% \\
+Coarser resampling & 1-h trace groups & -4.482 & -2.793 & 0.426 & 4/4 predeclared gates pass \\
+HGB score / constrained selection & 5-s EWMA selected; 15-min trace blocks & -4.598 & -2.926 & 0.245 & 4/4 controller gates pass; friction exceeds 1\% \\
+HGB asymmetric-family diagnostic & 15-min trace blocks & -2.970 & -4.122 & 0.430 & strict coverage gate failed \\
+Episode-definition sensitivity & Strict zero-gap episodes & -4.482 & -3.954 & -- & descriptive; no action replay or refit \\
+Episode-definition sensitivity & Exclude mixed-attack epochs & -4.471 & -2.793 & -- & descriptive; no action replay or refit \\
+Alternative timestamp scaling & raw timestamp / 1e6 & -- & -- & -- & no feasible proposed policy at 1\% \\
+Lease-timeout sensitivity & 5--300 s label-blind leases & -4.301 & -- & 0.428 & descriptive direction stable \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,6 @@
+policy,role,epochs,benign_friction_pct,benign_isolation_pct,malicious_allow_pct,malicious_not_isolated_pct,effective_transitions,transitions_per_1000_observed_epochs,attack_episode_count,episode_coverage_pct,mean_capped_delay_s,median_capped_delay_s
+Friction-budgeted,proposed,101561,0.821378,0.253428,22.329911,29.571008,3688,36.313152,752,82.978723,5.703457,1.000000
+Stateless,static reference,101561,0.642621,0.642621,26.811582,26.811582,8656,85.229566,752,85.771277,4.151596,1.000000
+EWMA,comparator,101561,0.864371,0.864371,23.117820,23.117820,4591,45.204360,752,83.244681,4.845745,1.000000
+Two-report,comparator,101561,0.810065,0.405032,23.175345,27.529764,2879,28.347496,752,75.398936,7.736702,2.000000
+Symmetric hysteresis,comparator,101561,0.758021,0.425397,21.949902,28.103265,7754,76.348205,752,83.909574,5.187500,1.000000

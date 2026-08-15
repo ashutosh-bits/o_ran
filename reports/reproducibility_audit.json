@@ -1,0 +1,51 @@
+{
+  "artifact_sha256": {
+    "action_trace": "c10ff1a1aa8688d51002a491bf17452416f705824f8b8e8cf8ed63cd5b0b1b45",
+    "aggregate": "011b0936c344e9df3975a7c5da681890db39bdfdced17f6d0afc122045389d49",
+    "candidate_lock": "f9e35696010edbe6b68d9e4976729c71d580b143d5c2689744b7505735498c23",
+    "episodes": "08e3397b9f20bf3a675cb703a693a2c855cbbef58ec0cac6e5e4e2df7bf397dc",
+    "inference": "cb7ea80d0e9be24f6747bae9acae92a5e0140ec11d6ff8b1c7473a9cd511f98a",
+    "risk_diagnostics": "3b724122921c99ac6059bc53208dc9ec80db437a002d0f489ac2338c97aab17a",
+    "run_manifest": "6083f268a6ce598d5490489255208966335fc10bad471728b9e63bc0e8d6ef8c",
+    "scores": "438c8cdd333b307015b1a8972574179875ab384d6524962e0ffef066b4d75831",
+    "split_manifest": "4849fa56715675dd6dbbee28e9c640a98234e982ce666a4de148c2c459296f23",
+    "strict_selection": "9492458a92f3dccbc550d2aa29ab7c7bf407fd34e99f903ba1b893074ab964a6"
+  },
+  "audit_version": 1,
+  "check_count": 20,
+  "checks": [
+    "source SHA-256 matches split manifest",
+    "source SHA-256 matches locked protocol",
+    "protocol SHA-256 matches confirmatory run",
+    "score SHA-256 matches locked protocol",
+    "score SHA-256 matches confirmatory run",
+    "candidate lock SHA-256 matches confirmatory run",
+    "candidate canonical JSON hashes to its lock",
+    "trace-block split sets are disjoint, complete, and chronological",
+    "risk feature list contains no explicitly forbidden metadata",
+    "score epoch keys are unique",
+    "score partitions share no trace blocks",
+    "action table is complete for every candidate and evaluation epoch",
+    "action candidate/evaluation-row keys are unique",
+    "all actions are ALLOW/RESTRICT/ISOLATE",
+    "every action row carries the candidate lock",
+    "effective actions exactly reproduce the one-epoch causal lag",
+    "saved aggregate metrics exactly recompute from action rows",
+    "ground-truth episode keys are identical across policies",
+    "exactly one successful proposed policy was locked at the 1% tuning budget",
+    "all four predeclared held-out controller gates pass"
+  ],
+  "evaluation_candidates": [
+    "ewma-template-002-B0.01",
+    "n_report-template-000-B0.01",
+    "proposed-template-047-B0.01",
+    "stateless-reference-0.01",
+    "symmetric_hysteresis-template-003-B0.01"
+  ],
+  "evaluation_epochs": 101561,
+  "evaluation_rnti_leases": 932,
+  "evaluation_trace_blocks": 56,
+  "note": "A passing integrity audit does not validate causal attack prevention, durable identity, or external generalization.",
+  "source_sha256": "4cc8498466eb7cb258412721ae94a2460f04a7da1235ac07e8e9cd20e15a76a7",
+  "status": "pass"
+}

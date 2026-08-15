@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Chronological held-out RNTI-level offline policy replay at the locked 1\% tuning budget.}
+\label{tab:heldout-policy}
+\begin{tabular}{lrrrrrr}
+\hline
+Policy & Friction (\%) & ALLOW (\%) & Not isolated (\%) & Transitions/1k & Coverage (\%) & Median delay (s) \\
+\hline
+Friction-budgeted & 0.821 & 22.330 & 29.571 & 36.313 & 82.979 & 1.000 \\
+Stateless & 0.643 & 26.812 & 26.812 & 85.230 & 85.771 & 1.000 \\
+EWMA & 0.864 & 23.118 & 23.118 & 45.204 & 83.245 & 1.000 \\
+Two-report & 0.810 & 23.175 & 27.530 & 28.347 & 75.399 & 2.000 \\
+Symmetric hysteresis & 0.758 & 21.950 & 28.103 & 76.348 & 83.910 & 1.000 \\
+\hline
+\end{tabular}
+\end{table}

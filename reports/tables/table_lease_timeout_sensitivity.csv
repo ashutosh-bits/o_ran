@@ -1,0 +1,11 @@
+lease_timeout_s,policy,epochs,episodes,benign_friction_pct,malicious_allow_pct,malicious_not_isolated_pct,transitions_per_1000_observed_epochs,episode_coverage_pct,mean_capped_delay_s,median_capped_delay_s,scope_note
+5.000000,Friction-budgeted,101561,1533,0.309997,23.410672,30.125333,35.958685,81.735160,3.953033,1.000000,locked thresholds; lease construction changed without refit
+5.000000,Stateless,101561,1533,0.518170,27.261317,27.261317,84.244937,84.409654,2.993477,1.000000,locked thresholds; lease construction changed without refit
+10.000000,Friction-budgeted,101561,1134,0.597366,22.884237,29.919640,36.638080,86.684303,4.520282,1.000000,locked thresholds; lease construction changed without refit
+10.000000,Stateless,101561,1134,0.581527,27.045165,27.045165,84.963716,88.977072,3.377425,1.000000,locked thresholds; lease construction changed without refit
+30.000000,Friction-budgeted,101561,752,0.821378,22.329911,29.571008,36.313152,82.978723,5.703457,1.000000,locked thresholds; lease construction changed without refit
+30.000000,Stateless,101561,752,0.642621,26.811582,26.811582,85.229566,85.771277,4.151596,1.000000,locked thresholds; lease construction changed without refit
+60.000000,Friction-budgeted,101561,725,0.832692,22.293305,29.567521,36.431307,83.448276,5.416552,1.000000,locked thresholds; lease construction changed without refit
+60.000000,Stateless,101561,725,0.647147,26.797636,26.797636,85.337876,85.793103,4.146207,1.000000,locked thresholds; lease construction changed without refit
+300.000000,Friction-budgeted,101561,722,0.832692,22.286332,29.567521,36.451000,83.656510,5.362881,1.000000,locked thresholds; lease construction changed without refit
+300.000000,Stateless,101561,722,0.647147,26.795893,26.795893,85.337876,85.734072,4.131579,1.000000,locked thresholds; lease construction changed without refit

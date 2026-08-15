@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Strict structural selections and diagnostics on controller-tuning trace blocks.}
+\label{tab:tuning-frontier}
+\begin{tabular}{lrrrrr}
+\hline
+Budget (\%) & Family & Status & Friction (\%) & ALLOW (\%) & Transitions/min \\
+\hline
+0.100 & Friction-budgeted & no budget matched candidate & -- & -- & -- \\
+0.100 & Stateless & budget reference & 0.097 & 36.317 & 5.307 \\
+0.100 & EWMA & selected & 0.097 & 35.421 & 3.072 \\
+0.100 & Two-report & no budget matched candidate & -- & -- & -- \\
+0.100 & Symmetric hysteresis & no budget matched candidate & -- & -- & -- \\
+0.500 & Friction-budgeted & selected & 0.498 & 27.043 & 4.456 \\
+0.500 & Stateless & budget reference & 0.498 & 30.370 & 6.084 \\
+0.500 & EWMA & selected & 0.498 & 27.435 & 3.727 \\
+0.500 & Two-report & coverage inferior & 0.498 & 29.663 & 1.686 \\
+0.500 & Symmetric hysteresis & insufficient transition reduction & 0.498 & 26.877 & 4.629 \\
+1.000 & Friction-budgeted & selected & 0.999 & 23.360 & 2.480 \\
+1.000 & Stateless & budget reference & 0.999 & 26.845 & 6.759 \\
+1.000 & EWMA & selected & 0.999 & 21.957 & 3.582 \\
+1.000 & Two-report & coverage inferior & 0.989 & 23.681 & 2.030 \\
+1.000 & Symmetric hysteresis & insufficient transition reduction & 0.995 & 22.220 & 5.573 \\
+2.000 & Friction-budgeted & selected & 1.994 & 19.949 & 1.780 \\
+2.000 & Stateless & budget reference & 1.998 & 22.528 & 6.828 \\
+2.000 & EWMA & selected & 1.998 & 17.462 & 3.064 \\
+2.000 & Two-report & coverage inferior & 1.994 & 17.503 & 2.204 \\
+2.000 & Symmetric hysteresis & insufficient transition reduction & 1.994 & 17.264 & 6.280 \\
+5.000 & Friction-budgeted & isolation inferior & 4.991 & 12.067 & 1.307 \\
+5.000 & Stateless & budget reference & 4.997 & 16.836 & 6.052 \\
+5.000 & EWMA & selected & 4.997 & 13.485 & 2.464 \\
+5.000 & Two-report & coverage inferior & 4.994 & 12.961 & 1.943 \\
+5.000 & Symmetric hysteresis & insufficient transition reduction & 4.994 & 12.244 & 6.043 \\
+\hline
+\end{tabular}
+\end{table}
