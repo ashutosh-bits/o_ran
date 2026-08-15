@@ -1,0 +1,1839 @@
+{
+  "ewma-template-000": {
+    "calibration": "equal_entry",
+    "controller": "ewma",
+    "family": "ewma",
+    "fixed": {
+      "tau_s": 0.5
+    },
+    "template": "ewma-template-000"
+  },
+  "ewma-template-001": {
+    "calibration": "equal_entry",
+    "controller": "ewma",
+    "family": "ewma",
+    "fixed": {
+      "tau_s": 1.0
+    },
+    "template": "ewma-template-001"
+  },
+  "ewma-template-002": {
+    "calibration": "equal_entry",
+    "controller": "ewma",
+    "family": "ewma",
+    "fixed": {
+      "tau_s": 2.0
+    },
+    "template": "ewma-template-002"
+  },
+  "ewma-template-003": {
+    "calibration": "equal_entry",
+    "controller": "ewma",
+    "family": "ewma",
+    "fixed": {
+      "tau_s": 5.0
+    },
+    "template": "ewma-template-003"
+  },
+  "n_report-template-000": {
+    "calibration": "equal_entry",
+    "controller": "n_report",
+    "family": "n_report",
+    "fixed": {
+      "entry_reports": 2,
+      "recovery_reports": 2
+    },
+    "template": "n_report-template-000"
+  },
+  "n_report-template-001": {
+    "calibration": "equal_entry",
+    "controller": "n_report",
+    "family": "n_report",
+    "fixed": {
+      "entry_reports": 3,
+      "recovery_reports": 3
+    },
+    "template": "n_report-template-001"
+  },
+  "n_report-template-002": {
+    "calibration": "equal_entry",
+    "controller": "n_report",
+    "family": "n_report",
+    "fixed": {
+      "entry_reports": 5,
+      "recovery_reports": 5
+    },
+    "template": "n_report-template-002"
+  },
+  "proposed-template-000": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-000"
+  },
+  "proposed-template-001": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-001"
+  },
+  "proposed-template-002": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-002"
+  },
+  "proposed-template-003": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-003"
+  },
+  "proposed-template-004": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-004"
+  },
+  "proposed-template-005": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-005"
+  },
+  "proposed-template-006": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-006"
+  },
+  "proposed-template-007": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-007"
+  },
+  "proposed-template-008": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-008"
+  },
+  "proposed-template-009": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-009"
+  },
+  "proposed-template-010": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-010"
+  },
+  "proposed-template-011": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-011"
+  },
+  "proposed-template-012": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-012"
+  },
+  "proposed-template-013": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-013"
+  },
+  "proposed-template-014": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-014"
+  },
+  "proposed-template-015": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-015"
+  },
+  "proposed-template-016": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-016"
+  },
+  "proposed-template-017": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-017"
+  },
+  "proposed-template-018": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-018"
+  },
+  "proposed-template-019": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-019"
+  },
+  "proposed-template-020": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-020"
+  },
+  "proposed-template-021": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-021"
+  },
+  "proposed-template-022": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-022"
+  },
+  "proposed-template-023": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-023"
+  },
+  "proposed-template-024": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-024"
+  },
+  "proposed-template-025": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-025"
+  },
+  "proposed-template-026": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-026"
+  },
+  "proposed-template-027": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-027"
+  },
+  "proposed-template-028": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-028"
+  },
+  "proposed-template-029": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-029"
+  },
+  "proposed-template-030": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-030"
+  },
+  "proposed-template-031": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-031"
+  },
+  "proposed-template-032": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-032"
+  },
+  "proposed-template-033": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-033"
+  },
+  "proposed-template-034": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-034"
+  },
+  "proposed-template-035": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9841560230457429,
+      "isolate_quantile": 0.999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-035"
+  },
+  "proposed-template-036": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-036"
+  },
+  "proposed-template-037": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-037"
+  },
+  "proposed-template-038": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-038"
+  },
+  "proposed-template-039": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-039"
+  },
+  "proposed-template-040": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-040"
+  },
+  "proposed-template-041": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-041"
+  },
+  "proposed-template-042": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-042"
+  },
+  "proposed-template-043": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-043"
+  },
+  "proposed-template-044": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-044"
+  },
+  "proposed-template-045": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-045"
+  },
+  "proposed-template-046": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-046"
+  },
+  "proposed-template-047": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-047"
+  },
+  "proposed-template-048": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-048"
+  },
+  "proposed-template-049": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-049"
+  },
+  "proposed-template-050": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-050"
+  },
+  "proposed-template-051": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-051"
+  },
+  "proposed-template-052": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-052"
+  },
+  "proposed-template-053": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-053"
+  },
+  "proposed-template-054": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-054"
+  },
+  "proposed-template-055": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-055"
+  },
+  "proposed-template-056": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-056"
+  },
+  "proposed-template-057": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-057"
+  },
+  "proposed-template-058": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-058"
+  },
+  "proposed-template-059": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-059"
+  },
+  "proposed-template-060": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-060"
+  },
+  "proposed-template-061": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-061"
+  },
+  "proposed-template-062": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-062"
+  },
+  "proposed-template-063": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-063"
+  },
+  "proposed-template-064": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-064"
+  },
+  "proposed-template-065": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-065"
+  },
+  "proposed-template-066": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-066"
+  },
+  "proposed-template-067": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-067"
+  },
+  "proposed-template-068": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-068"
+  },
+  "proposed-template-069": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-069"
+  },
+  "proposed-template-070": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-070"
+  },
+  "proposed-template-071": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9968760822163045,
+      "isolate_quantile": 0.9995,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-071"
+  },
+  "proposed-template-072": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-072"
+  },
+  "proposed-template-073": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-073"
+  },
+  "proposed-template-074": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-074"
+  },
+  "proposed-template-075": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-075"
+  },
+  "proposed-template-076": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-076"
+  },
+  "proposed-template-077": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-077"
+  },
+  "proposed-template-078": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-078"
+  },
+  "proposed-template-079": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-079"
+  },
+  "proposed-template-080": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1
+    },
+    "template": "proposed-template-080"
+  },
+  "proposed-template-081": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-081"
+  },
+  "proposed-template-082": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-082"
+  },
+  "proposed-template-083": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-083"
+  },
+  "proposed-template-084": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-084"
+  },
+  "proposed-template-085": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-085"
+  },
+  "proposed-template-086": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-086"
+  },
+  "proposed-template-087": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-087"
+  },
+  "proposed-template-088": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-088"
+  },
+  "proposed-template-089": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2
+    },
+    "template": "proposed-template-089"
+  },
+  "proposed-template-090": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-090"
+  },
+  "proposed-template-091": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-091"
+  },
+  "proposed-template-092": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-092"
+  },
+  "proposed-template-093": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-093"
+  },
+  "proposed-template-094": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-094"
+  },
+  "proposed-template-095": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-095"
+  },
+  "proposed-template-096": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-096"
+  },
+  "proposed-template-097": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-097"
+  },
+  "proposed-template-098": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3
+    },
+    "template": "proposed-template-098"
+  },
+  "proposed-template-099": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-099"
+  },
+  "proposed-template-100": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-100"
+  },
+  "proposed-template-101": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-101"
+  },
+  "proposed-template-102": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-102"
+  },
+  "proposed-template-103": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-103"
+  },
+  "proposed-template-104": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-104"
+  },
+  "proposed-template-105": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.005,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-105"
+  },
+  "proposed-template-106": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.025,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-106"
+  },
+  "proposed-template-107": {
+    "calibration": "proposed_restrict_entry",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "fixed": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "exit_margin": 0.05,
+      "isolate_enter": 0.9999730965419287,
+      "isolate_quantile": 0.9999,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 5
+    },
+    "template": "proposed-template-107"
+  },
+  "stateless-template-000": {
+    "calibration": "equal_entry",
+    "controller": "stateless",
+    "family": "stateless",
+    "fixed": {},
+    "template": "stateless-template-000"
+  },
+  "symmetric_hysteresis-template-000": {
+    "calibration": "symmetric_entry",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "fixed": {
+      "half_width": 0.005
+    },
+    "template": "symmetric_hysteresis-template-000"
+  },
+  "symmetric_hysteresis-template-001": {
+    "calibration": "symmetric_entry",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "fixed": {
+      "half_width": 0.01
+    },
+    "template": "symmetric_hysteresis-template-001"
+  },
+  "symmetric_hysteresis-template-002": {
+    "calibration": "symmetric_entry",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "fixed": {
+      "half_width": 0.025
+    },
+    "template": "symmetric_hysteresis-template-002"
+  },
+  "symmetric_hysteresis-template-003": {
+    "calibration": "symmetric_entry",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "fixed": {
+      "half_width": 0.05
+    },
+    "template": "symmetric_hysteresis-template-003"
+  }
+}

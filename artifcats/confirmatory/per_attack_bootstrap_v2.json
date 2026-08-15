@@ -1,0 +1,94 @@
+{
+  "ddos-ripper-C": {
+    "coverage_difference": {
+      "clusters": 56,
+      "estimate": 0.0,
+      "lower": 0.0,
+      "replicates": 5000,
+      "upper": 0.0
+    },
+    "exposure_difference": {
+      "clusters": 56,
+      "estimate": -0.08256578947368422,
+      "lower": -0.09684474892308921,
+      "replicates": 5000,
+      "upper": -0.07048935461588278
+    },
+    "mean_capped_delay_difference_s": {
+      "clusters": 56,
+      "estimate": 0.030487804878048808,
+      "lower": 0.006409235668789791,
+      "replicates": 5000,
+      "upper": 0.05806639159789948
+    }
+  },
+  "dos-hulk-C": {
+    "coverage_difference": {
+      "clusters": 56,
+      "estimate": 0.041095890410958846,
+      "lower": 0.013605442176870763,
+      "replicates": 5000,
+      "upper": 0.07333333333333325
+    },
+    "exposure_difference": {
+      "clusters": 56,
+      "estimate": -0.03638990163032263,
+      "lower": -0.048119467133360294,
+      "replicates": 5000,
+      "upper": -0.026666142434573735
+    },
+    "mean_capped_delay_difference_s": {
+      "clusters": 56,
+      "estimate": 0.020547945205479534,
+      "lower": -0.05147414611005695,
+      "replicates": 5000,
+      "upper": 0.12782173456898072
+    }
+  },
+  "portscan": {
+    "coverage_difference": {
+      "clusters": 56,
+      "estimate": 0.05241935483870963,
+      "lower": 0.015264284061994026,
+      "replicates": 5000,
+      "upper": 0.09796746903889744
+    },
+    "exposure_difference": {
+      "clusters": 56,
+      "estimate": -0.07974626189397373,
+      "lower": -0.08775719020763585,
+      "replicates": 5000,
+      "upper": -0.07277131273905288
+    },
+    "mean_capped_delay_difference_s": {
+      "clusters": 56,
+      "estimate": -0.31048387096774177,
+      "lower": -0.4674824977416439,
+      "replicates": 5000,
+      "upper": -0.17355371900826455
+    }
+  },
+  "slowloris-C": {
+    "coverage_difference": {
+      "clusters": 56,
+      "estimate": -0.06985294117647067,
+      "lower": -0.09722357328145265,
+      "replicates": 5000,
+      "upper": -0.04379500602128335
+    },
+    "exposure_difference": {
+      "clusters": 56,
+      "estimate": 0.012270341207349156,
+      "lower": -0.004926186709293136,
+      "replicates": 5000,
+      "upper": 0.03153049482163406
+    },
+    "mean_capped_delay_difference_s": {
+      "clusters": 56,
+      "estimate": 4.209558823529411,
+      "lower": 3.329365079365079,
+      "replicates": 5000,
+      "upper": 5.163104081951829
+    }
+  }
+}

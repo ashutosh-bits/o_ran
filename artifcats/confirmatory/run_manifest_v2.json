@@ -1,0 +1,28 @@
+{
+  "artifact_version": "v2",
+  "candidate_count": 5,
+  "candidate_lock_sha256": "52eedcea2437afcfe8d7129fdf689c8ba86a18c06adb4ac0c4c95fab5b9e48c0",
+  "delay_cap_s": 30.0,
+  "episode_merge_gap_s": 30.0,
+  "evaluation_epochs": 101561,
+  "evaluation_rnti_leases": 932,
+  "evaluation_split": "test",
+  "evaluation_trace_blocks": 56,
+  "one_epoch_action_lag": true,
+  "output_paths": {
+    "action_blocks": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/action_block_contributions_v2.parquet",
+    "action_trace": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/action_trace_v2.parquet",
+    "aggregate": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/aggregate_metrics_v2.parquet",
+    "attack_blocks": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/attack_block_contributions_v2.parquet",
+    "candidate_lock": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/candidate_lock_v2.json",
+    "episode_strata": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/attack_episode_strata_v2.parquet",
+    "episode_summary": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/attack_episode_summary_v2.parquet",
+    "episodes": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/attack_episodes_v2.parquet",
+    "run_manifest": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/run_manifest_v2.json",
+    "stratified": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/stratified_action_metrics_v2.parquet"
+  },
+  "protocol_path": "/nobackup/ashukuma/xr/o_ran_publication/configs/study_protocol_v1_locked.json",
+  "protocol_sha256": "c862d5dbc42be0a27f92f39ec3a73829e21f1e710958c98664fde3be67c8f2cb",
+  "score_path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/results/scores_logistic_seed1729_v1.parquet",
+  "score_sha256": "438c8cdd333b307015b1a8972574179875ab384d6524962e0ffef066b4d75831"
+}

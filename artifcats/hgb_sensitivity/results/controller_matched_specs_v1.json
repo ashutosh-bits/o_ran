@@ -1,0 +1,1036 @@
+{
+  "ewma-template-000-B0.01": {
+    "candidate": "ewma-template-000-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.8951072692871094,
+      "restrict_threshold": 0.8951072692871094,
+      "tau_s": 0.5
+    }
+  },
+  "ewma-template-001-B0.01": {
+    "candidate": "ewma-template-001-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.8486747741699219,
+      "restrict_threshold": 0.8486747741699219,
+      "tau_s": 1.0
+    }
+  },
+  "ewma-template-002-B0.01": {
+    "candidate": "ewma-template-002-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.8168487548828125,
+      "restrict_threshold": 0.8168487548828125,
+      "tau_s": 2.0
+    }
+  },
+  "ewma-template-003-B0.01": {
+    "candidate": "ewma-template-003-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.8032264709472656,
+      "restrict_threshold": 0.8032264709472656,
+      "tau_s": 5.0
+    }
+  },
+  "n_report-template-000-B0.01": {
+    "candidate": "n_report-template-000-B0.01",
+    "controller": "n_report",
+    "family": "n_report",
+    "parameters": {
+      "entry_reports": 2,
+      "isolate_threshold": 0.94500732421875,
+      "recovery_reports": 2,
+      "restrict_threshold": 0.94500732421875
+    }
+  },
+  "n_report-template-001-B0.01": {
+    "candidate": "n_report-template-001-B0.01",
+    "controller": "n_report",
+    "family": "n_report",
+    "parameters": {
+      "entry_reports": 3,
+      "isolate_threshold": 0.9805755615234375,
+      "recovery_reports": 3,
+      "restrict_threshold": 0.9805755615234375
+    }
+  },
+  "n_report-template-002-B0.01": {
+    "candidate": "n_report-template-002-B0.01",
+    "controller": "n_report",
+    "family": "n_report",
+    "parameters": {
+      "entry_reports": 5,
+      "isolate_threshold": 0.9978866577148438,
+      "recovery_reports": 5,
+      "restrict_threshold": 0.9978866577148438
+    }
+  },
+  "proposed-template-000-B0.01": {
+    "candidate": "proposed-template-000-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9850933539430684,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.943497659562897,
+      "restrict_exit": 0.938497659562897
+    }
+  },
+  "proposed-template-001-B0.01": {
+    "candidate": "proposed-template-001-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9650933539430684,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9458733336947871,
+      "restrict_exit": 0.9208733336947871
+    }
+  },
+  "proposed-template-002-B0.01": {
+    "candidate": "proposed-template-002-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9400933539430684,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9493745259368571,
+      "restrict_exit": 0.8993745259368571
+    }
+  },
+  "proposed-template-003-B0.01": {
+    "candidate": "proposed-template-003-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9850933539430684,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.943497659562897,
+      "restrict_exit": 0.938497659562897
+    }
+  },
+  "proposed-template-004-B0.01": {
+    "candidate": "proposed-template-004-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9650933539430684,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9458733336947871,
+      "restrict_exit": 0.9208733336947871
+    }
+  },
+  "proposed-template-005-B0.01": {
+    "candidate": "proposed-template-005-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9400933539430684,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9493745259368571,
+      "restrict_exit": 0.8993745259368571
+    }
+  },
+  "proposed-template-006-B0.01": {
+    "candidate": "proposed-template-006-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9850933539430684,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9716469430366277,
+      "restrict_exit": 0.9666469430366277
+    }
+  },
+  "proposed-template-007-B0.01": {
+    "candidate": "proposed-template-007-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9650933539430684,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9736109343698278,
+      "restrict_exit": 0.9486109343698278
+    }
+  },
+  "proposed-template-008-B0.01": {
+    "candidate": "proposed-template-008-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9400933539430684,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9742227932082479,
+      "restrict_exit": 0.9242227932082479
+    }
+  },
+  "proposed-template-009-B0.01": {
+    "candidate": "proposed-template-009-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9850933539430684,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9840767420319383,
+      "restrict_exit": 0.9790767420319383
+    }
+  },
+  "proposed-template-010-B0.01": {
+    "candidate": "proposed-template-010-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9650933539430684,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9879329634765484,
+      "restrict_exit": 0.9629329634765483
+    }
+  },
+  "proposed-template-012-B0.01": {
+    "candidate": "proposed-template-012-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9850933539430684,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9840767420319383,
+      "restrict_exit": 0.9790767420319383
+    }
+  },
+  "proposed-template-013-B0.01": {
+    "candidate": "proposed-template-013-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9650933539430684,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9879329634765484,
+      "restrict_exit": 0.9629329634765483
+    }
+  },
+  "proposed-template-015-B0.01": {
+    "candidate": "proposed-template-015-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9850933539430684,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9840767420319383,
+      "restrict_exit": 0.9790767420319383
+    }
+  },
+  "proposed-template-016-B0.01": {
+    "candidate": "proposed-template-016-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9900933539430684,
+      "isolate_exit": 0.9650933539430684,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9879329634765484,
+      "restrict_exit": 0.9629329634765483
+    }
+  },
+  "proposed-template-036-B0.01": {
+    "candidate": "proposed-template-036-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9886088593388698,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9419695805469359,
+      "restrict_exit": 0.9369695805469359
+    }
+  },
+  "proposed-template-037-B0.01": {
+    "candidate": "proposed-template-037-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9686088593388698,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9432241754735454,
+      "restrict_exit": 0.9182241754735454
+    }
+  },
+  "proposed-template-038-B0.01": {
+    "candidate": "proposed-template-038-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9436088593388697,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9469652183513815,
+      "restrict_exit": 0.8969652183513814
+    }
+  },
+  "proposed-template-039-B0.01": {
+    "candidate": "proposed-template-039-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9886088593388698,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9419695805469359,
+      "restrict_exit": 0.9369695805469359
+    }
+  },
+  "proposed-template-040-B0.01": {
+    "candidate": "proposed-template-040-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9686088593388698,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9432241754735454,
+      "restrict_exit": 0.9182241754735454
+    }
+  },
+  "proposed-template-041-B0.01": {
+    "candidate": "proposed-template-041-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9436088593388697,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9469652183513815,
+      "restrict_exit": 0.8969652183513814
+    }
+  },
+  "proposed-template-042-B0.01": {
+    "candidate": "proposed-template-042-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9886088593388698,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9661518029994123,
+      "restrict_exit": 0.9611518029994123
+    }
+  },
+  "proposed-template-043-B0.01": {
+    "candidate": "proposed-template-043-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9686088593388698,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9670842209811221,
+      "restrict_exit": 0.9420842209811221
+    }
+  },
+  "proposed-template-044-B0.01": {
+    "candidate": "proposed-template-044-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9436088593388697,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9678422843808863,
+      "restrict_exit": 0.9178422843808862
+    }
+  },
+  "proposed-template-045-B0.01": {
+    "candidate": "proposed-template-045-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9886088593388698,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9773711413159216,
+      "restrict_exit": 0.9723711413159216
+    }
+  },
+  "proposed-template-046-B0.01": {
+    "candidate": "proposed-template-046-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9686088593388698,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9830149233271658,
+      "restrict_exit": 0.9580149233271658
+    }
+  },
+  "proposed-template-047-B0.01": {
+    "candidate": "proposed-template-047-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9436088593388697,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9861305639001964,
+      "restrict_exit": 0.9361305639001963
+    }
+  },
+  "proposed-template-048-B0.01": {
+    "candidate": "proposed-template-048-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9886088593388698,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9773711413159216,
+      "restrict_exit": 0.9723711413159216
+    }
+  },
+  "proposed-template-049-B0.01": {
+    "candidate": "proposed-template-049-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9686088593388698,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9830149233271658,
+      "restrict_exit": 0.9580149233271658
+    }
+  },
+  "proposed-template-050-B0.01": {
+    "candidate": "proposed-template-050-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9436088593388697,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9861305639001964,
+      "restrict_exit": 0.9361305639001963
+    }
+  },
+  "proposed-template-051-B0.01": {
+    "candidate": "proposed-template-051-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9886088593388698,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9773711413159216,
+      "restrict_exit": 0.9723711413159216
+    }
+  },
+  "proposed-template-052-B0.01": {
+    "candidate": "proposed-template-052-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9686088593388698,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9830149233271658,
+      "restrict_exit": 0.9580149233271658
+    }
+  },
+  "proposed-template-053-B0.01": {
+    "candidate": "proposed-template-053-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.9936088593388698,
+      "isolate_exit": 0.9436088593388697,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9861305639001964,
+      "restrict_exit": 0.9361305639001963
+    }
+  },
+  "proposed-template-072-B0.01": {
+    "candidate": "proposed-template-072-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9373908843779573,
+      "restrict_exit": 0.9323908843779573
+    }
+  },
+  "proposed-template-073-B0.01": {
+    "candidate": "proposed-template-073-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.941196188002968,
+      "restrict_exit": 0.916196188002968
+    }
+  },
+  "proposed-template-074-B0.01": {
+    "candidate": "proposed-template-074-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9475375134748809,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.944898748430104,
+      "restrict_exit": 0.894898748430104
+    }
+  },
+  "proposed-template-075-B0.01": {
+    "candidate": "proposed-template-075-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9373908843779573,
+      "restrict_exit": 0.9323908843779573
+    }
+  },
+  "proposed-template-076-B0.01": {
+    "candidate": "proposed-template-076-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.941196188002968,
+      "restrict_exit": 0.916196188002968
+    }
+  },
+  "proposed-template-077-B0.01": {
+    "candidate": "proposed-template-077-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9475375134748809,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.944898748430104,
+      "restrict_exit": 0.894898748430104
+    }
+  },
+  "proposed-template-078-B0.01": {
+    "candidate": "proposed-template-078-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9621672162804037,
+      "restrict_exit": 0.9571672162804037
+    }
+  },
+  "proposed-template-079-B0.01": {
+    "candidate": "proposed-template-079-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9634496036020326,
+      "restrict_exit": 0.9384496036020326
+    }
+  },
+  "proposed-template-080-B0.01": {
+    "candidate": "proposed-template-080-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9475375134748809,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 1,
+      "restrict_enter": 0.9649336720157868,
+      "restrict_exit": 0.9149336720157868
+    }
+  },
+  "proposed-template-081-B0.01": {
+    "candidate": "proposed-template-081-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9737087021750621,
+      "restrict_exit": 0.9687087021750621
+    }
+  },
+  "proposed-template-082-B0.01": {
+    "candidate": "proposed-template-082-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.977103033008572,
+      "restrict_exit": 0.952103033008572
+    }
+  },
+  "proposed-template-083-B0.01": {
+    "candidate": "proposed-template-083-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9475375134748809,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9830164748418391,
+      "restrict_exit": 0.933016474841839
+    }
+  },
+  "proposed-template-084-B0.01": {
+    "candidate": "proposed-template-084-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9737087021750621,
+      "restrict_exit": 0.9687087021750621
+    }
+  },
+  "proposed-template-085-B0.01": {
+    "candidate": "proposed-template-085-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.977103033008572,
+      "restrict_exit": 0.952103033008572
+    }
+  },
+  "proposed-template-086-B0.01": {
+    "candidate": "proposed-template-086-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9475375134748809,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9830164748418391,
+      "restrict_exit": 0.933016474841839
+    }
+  },
+  "proposed-template-087-B0.01": {
+    "candidate": "proposed-template-087-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9737087021750621,
+      "restrict_exit": 0.9687087021750621
+    }
+  },
+  "proposed-template-088-B0.01": {
+    "candidate": "proposed-template-088-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.977103033008572,
+      "restrict_exit": 0.952103033008572
+    }
+  },
+  "proposed-template-089-B0.01": {
+    "candidate": "proposed-template-089-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9475375134748809,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 2,
+      "restrict_enter": 0.9830164748418391,
+      "restrict_exit": 0.933016474841839
+    }
+  },
+  "proposed-template-090-B0.01": {
+    "candidate": "proposed-template-090-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3,
+      "restrict_enter": 0.9934049537381191,
+      "restrict_exit": 0.9884049537381191
+    }
+  },
+  "proposed-template-091-B0.01": {
+    "candidate": "proposed-template-091-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 0.0,
+      "min_restrict_hold_s": 0.0,
+      "recovery_reports": 3,
+      "restrict_enter": 0.9950488449041237,
+      "restrict_exit": 0.9700488449041237
+    }
+  },
+  "proposed-template-093-B0.01": {
+    "candidate": "proposed-template-093-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3,
+      "restrict_enter": 0.9934049537381191,
+      "restrict_exit": 0.9884049537381191
+    }
+  },
+  "proposed-template-094-B0.01": {
+    "candidate": "proposed-template-094-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 1.0,
+      "min_restrict_hold_s": 1.0,
+      "recovery_reports": 3,
+      "restrict_enter": 0.9950488449041237,
+      "restrict_exit": 0.9700488449041237
+    }
+  },
+  "proposed-template-096-B0.01": {
+    "candidate": "proposed-template-096-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.992537513474881,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3,
+      "restrict_enter": 0.9934049537381191,
+      "restrict_exit": 0.9884049537381191
+    }
+  },
+  "proposed-template-097-B0.01": {
+    "candidate": "proposed-template-097-B0.01",
+    "controller": "asymmetric_sequential",
+    "family": "proposed",
+    "parameters": {
+      "entry_reports": 1,
+      "ewma_tau_s": null,
+      "isolate_enter": 0.997537513474881,
+      "isolate_exit": 0.9725375134748809,
+      "min_isolate_hold_s": 2.0,
+      "min_restrict_hold_s": 2.0,
+      "recovery_reports": 3,
+      "restrict_enter": 0.9950488449041237,
+      "restrict_exit": 0.9700488449041237
+    }
+  },
+  "stateless-template-000-B0.01": {
+    "candidate": "stateless-template-000-B0.01",
+    "controller": "stateless",
+    "family": "stateless",
+    "parameters": {
+      "isolate_threshold": 0.9320793151855469,
+      "restrict_threshold": 0.9320793151855469
+    }
+  },
+  "symmetric_hysteresis-template-000-B0.01": {
+    "candidate": "symmetric_hysteresis-template-000-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.005,
+      "isolate_center": 0.9587488937377929,
+      "restrict_center": 0.9587488937377929
+    }
+  },
+  "symmetric_hysteresis-template-001-B0.01": {
+    "candidate": "symmetric_hysteresis-template-001-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.01,
+      "isolate_center": 0.9556029510498047,
+      "restrict_center": 0.9556029510498047
+    }
+  },
+  "symmetric_hysteresis-template-002-B0.01": {
+    "candidate": "symmetric_hysteresis-template-002-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.025,
+      "isolate_center": 0.9424495697021484,
+      "restrict_center": 0.9424495697021484
+    }
+  },
+  "symmetric_hysteresis-template-003-B0.01": {
+    "candidate": "symmetric_hysteresis-template-003-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.05,
+      "isolate_center": 0.9214046478271484,
+      "restrict_center": 0.9214046478271484
+    }
+  }
+}
