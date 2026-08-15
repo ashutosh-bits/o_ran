@@ -1,0 +1,161 @@
+\documentclass[journal,10pt]{IEEEtran}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{microtype}
+\usepackage{url}
+
+\newcommand{\Allow}{\textsc{Allow}}
+\newcommand{\Restrict}{\textsc{Restrict}}
+\newcommand{\Isolate}{\textsc{Isolate}}
+\newcommand{\pp}{\,\mathrm{pp}}
+
+\begin{document}
+
+\title{Friction-Budgeted Stabilization of RNTI-Level Containment in O-RAN}
+
+% Replace this placeholder with the final author block before submission.
+\author{Anonymous Author(s)}
+
+\maketitle
+
+\begin{abstract}
+Adaptive containment driven by noisy radio telemetry can oscillate, imposing operational friction even when detection accuracy is high. We formulate RNTI-level containment in O-RAN as a sequential policy selected under an explicit benign-friction budget and security/delay safeguards. On an OpenIreland trace, using chronological trace-block-held-out replay and one-epoch actuation lag, the locked policy reduced action transitions by 57.4\% and malicious \Allow{} time by 4.48 percentage points versus a budget-matched stateless rule. The exposure gain held for unseen numeric RNTIs and three high-rate attacks, while the churn gain held in unseen-RNTI replay; Slowloris failed. Model and timestamp sensitivities expose the claim's limits.
+\end{abstract}
+
+\begin{IEEEkeywords}
+O-RAN, adaptive access control, zero trust, containment, policy churn, RNTI, sequential decision.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\IEEEPARstart{Z}{ero-trust} guidance calls for continual policy evaluation and permits an ongoing session to continue, be limited, or be revoked \cite{nist800207,nist180035}. O-RAN supplies programmable control points and timely radio measurements, but turning a noisy risk stream into repeated network actions creates a second problem beyond classification: a detector can alternate actions rapidly, while stabilization can delay or weaken containment. Existing O-RAN security work establishes the enlarged attack surface \cite{liyanage2023}, demonstrates zero-trust xApps \cite{abdalla2024ztran}, and studies early or real-time detection \cite{xavier2023early,scalingi2024detran}. A recent classifier on this same public KPI trace optimizes detection metrics on a 150,000-row window \cite{lee2025}; none of these studies quantifies the security--stability tradeoff under a fixed operational friction allowance.
+
+This letter treats an attached Radio Network Temporary Identifier (RNTI) as the enforcement handle and asks: among score-to-action policies that consume no ground-truth label, which one minimizes action churn while respecting a benign-friction budget and explicit containment/delay safeguards? The actions are operational intents for the current attachment: \Allow{} normal service, \Restrict{} to a policy-defined reduced service, or \Isolate{} the attached RNTI. They are not claims of durable identity, authentication, or resource authorization, and our evidence is offline replay rather than deployed prevention or QoS measurement.
+
+Our contribution is not a new EWMA or hysteresis primitive. It is (i) a friction-budgeted, security-constrained selection formulation with a budget-matched stateless reference; (ii) a leakage-resistant replay protocol that preserves whole label-blind trace blocks, applies a one-epoch actuation lag, resets state at inferred RNTI leases, and reports chronological, unseen-RNTI, and per-attack outcomes; and (iii) an empirical operating frontier showing where stabilization is feasible and where it fails. The locked 1\% policy substantially reduces churn, but its stronger \Isolate{} threshold moves some malicious time into \Restrict{}, and Slowloris exposes a material failure. We report both facts.
+
+\section{Friction-Budgeted Sequential Containment}
+Let $i$ denote a label-blind RNTI lease and $t$ a one-second decision epoch with duration $d_{it}$, calibrated risk score $s_{it}$, and action $a_{it}\in\{0,1,2\}$ for \Allow{}, \Restrict{}, and \Isolate{}. The controller receives only the score history and lease identifier. To prevent same-epoch look-ahead, its decision after epoch $t$ becomes effective at $t+1$; the first effective action in every lease is \Allow{}. Ground-truth attack indicator $y_{it}$ is used only for offline tuning and evaluation.
+
+For policy $\pi$, define benign friction, malicious \Allow{} exposure, malicious not-\Isolate{} exposure, and action churn as
+\begin{align}
+F(\pi)&=\frac{\sum d_{it}(1-y_{it})\mathbb{1}[a_{it}\geq1]}
+ {\sum d_{it}(1-y_{it})},\label{eq:f}\\
+E_A(\pi)&=\frac{\sum d_{it}y_{it}\mathbb{1}[a_{it}=0]}
+ {\sum d_{it}y_{it}},\label{eq:ea}\\
+E_{NI}(\pi)&=\frac{\sum d_{it}y_{it}\mathbb{1}[a_{it}<2]}
+ {\sum d_{it}y_{it}},\label{eq:eni}\\
+C(\pi)&=\frac{60\sum\mathbb{1}[a_{it}\ne a_{i,t-1}]}{\sum d_{it}},
+\label{eq:c}
+\end{align}
+where $C$ is transitions per observed RNTI-minute. An attack episode is covered when it reaches at least \Restrict{}. Delay is onset-to-first-\Restrict{}; in capped-delay summaries a miss receives the smaller of its observed episode span and 30~s.
+
+For each budget $B$, a stateless threshold is calibrated from below on benign tuning time. Candidate structures are independently threshold-calibrated to use at least 95\% of $B$ (up to one indivisible epoch) without exceeding it. Let $\Pi_B$ contain calibrated candidates with $F(\pi)\leq B$ that, relative to the matched stateless rule, increase $E_A$ by at most $2\pp$ and $E_{NI}$ by at most $5\pp$, reduce episode coverage by at most $5\pp$, increase median capped delay by at most 1~s, and reduce churn by at least 25\%. We select
+\begin{equation}
+\pi_B^*=\arg\min_{\pi\in\Pi_B} C(\pi).
+\label{eq:opt}
+\end{equation}
+This makes security and stability jointly auditable instead of choosing a smoother by detector accuracy alone.
+
+The sequential family uses ordered asymmetric entry/exit thresholds, optional entry/recovery persistence and minimum holds, and staged recovery $\mathrm{ISOLATE}\!\rightarrow\!\mathrm{RESTRICT}\!\rightarrow\!\mathrm{ALLOW}$. A deterministic grid comprised 108 such structures plus stateless, EWMA, $N$-report, and symmetric-hysteresis comparators (120 structures total). Each was calibrated at $B\in\{0.1,0.5,1,2,5\}\%$, producing 600 structure--budget tasks. The primary $B=1\%$ policy has immediate raw-score entry, two-report recovery, no time hold or smoothing, $(r_\uparrow,r_\downarrow)=(0.95503,0.90503)$ and $(q_\uparrow,q_\downarrow)=(0.99688,0.94688)$ for \Restrict{} and \Isolate{}. Thus, the selected state machine is deliberately simple; the contribution lies in its constrained selection and evaluation.
+
+\begin{table}[t]
+\caption{Proposed-family tuning frontier. Differences and reductions are relative to a stateless rule calibrated at the same nominal benign-friction budget.}
+\label{tab:frontier}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.1pt}
+\begin{tabular}{@{}rrrrl@{}}
+\toprule
+$B$ (\%) & $F$ (\%) & $\Delta E_A$ (pp) & churn red. (\%) & proposed status \\
+\midrule
+0.1 & --    & --    & --   & no budget match \\
+0.5 & 0.498 & $-3.33$ & 26.8 & selected \\
+1.0 & 0.999 & $-3.49$ & 63.3 & selected \\
+2.0 & 1.994 & $-2.58$ & 73.9 & selected \\
+5.0 & 4.991 & $-4.77$ & 78.4 & $E_{NI}$ safeguard failed \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Locked Study Protocol}
+\subsection{Public trace and time provenance}
+We use the CC BY 4.0 OpenIreland ``RAN Performance measurements for security threats'' CSV \cite{xavier2024data}, described by Xavier \emph{et al.} \cite{xavier2024dataset}. It has 3,175,140 rows, 47 columns, four benign traffic labels, and port-scan, DDoS-Ripper, DoS-Hulk, and Slowloris labels. Schema, constants, missingness, duplicate rows, identifier consistency, chronology, and label/RNTI/scenario coupling were audited before modeling. The exported \texttt{mac\_rnti} and \texttt{ue\_ident} columns are identical; \texttt{id\_ue} is scenario context, not a durable subscriber identifier. All identifiers, timestamps, mobility/scenario fields, labels, constants, and post-event fields were excluded from the risk model.
+
+Timestamp provenance is unresolved. The data article calls the field microseconds but gives no encoding or epoch. Dividing raw values by $10^5$ yields 24--27 October 2022 and an 89.6~ms median within-RNTI interval, with 89.4\% of same-label/mobility intervals between 50 and 150~ms; this agrees with the authors' related 100~ms collection description \cite{xavier2023early}. Division by $10^6$ instead yields April 1975 and 8.96~ms. We therefore use raw/$10^5$ as an explicitly empirical inference, not an author-confirmed unit, and test raw/$10^6$ separately.
+
+Labels never define boundaries. A new observable trace block starts after a 300~s global gap or at a 900~s maximum span; these are capture surrogates, not asserted captures or attack campaigns. A new RNTI lease starts at a block boundary or after 30~s of RNTI inactivity. Aggregation yields 525,271 causal one-second epochs in 5,892 leases and 273 trace blocks.
+
+\subsection{Chronology, scoring, and inference}
+Whole trace blocks are assigned chronologically: data through 25 October train the risk model (246,193 epochs); the first and second halves of 26 October calibrate probabilities (93,989) and tune controllers (83,528); 27 October is the frozen controller-evaluation split (101,561). The latter contains 56 blocks, 932 leases, 744 numeric RNTI values, and 274 values absent from all earlier splits. The entire trace and preliminary go/no-go behavior were inspected before lock, so this is a frozen chronological \emph{policy-outcome} holdout, not a never-inspected test set.
+
+The primary risk stream is regularized logistic regression on 25 dynamic radio/MAC KPIs, followed by Platt calibration on its separate split. Test AUROC is 0.951 (0.954 for previously observed and 0.947 for unseen numeric RNTIs). Thresholds and structures use only the controller-tuning split; the locked policies are replayed once on evaluation. This separation follows the security-ML warning that random or metadata-leaking splits can produce unrealistic claims \cite{arp2022}.
+
+An offline single-core, in-memory benchmark measured 0.284~$\mu$s/report for batch logistic scoring and 3.283~$\mu$s/report for the online controller update; it excludes telemetry, transport, serialization, scheduling, and actuation and is not near-RT RIC latency.
+
+We use 5,000 paired bootstrap resamples of the 56 trace blocks (seed 1729). Primary attack episodes merge missing telemetry gaps up to the frozen 30~s lease timeout, while any observed benign epoch terminates an episode. This aligns episode semantics with tuning. The alignment was documented before inference; it changes no action or time-weighted result, and strict zero-gap episodes remain a sensitivity. One-hour temporal groups (14 clusters) test the cluster definition.
+
+\section{Results}
+\subsection{Held-out aggregate comparison}
+Table~\ref{tab:aggregate} reports the frozen chronological replay. At a realized benign friction of 0.821\%, the proposed policy reduced malicious \Allow{} time from 26.812\% to 22.330\% ($-4.48\pp$) and churn from 5.114 to 2.179 transitions/RNTI-minute (57.4\%). Median capped delay remained 1~s and coverage fell by $2.79\pp$. However, $E_{NI}$ increased by $2.76\pp$: the policy often chose \Restrict{} instead of the stateless reference's direct \Isolate{}. This is within the frozen $5\pp$ safeguard but is not a hard-isolation improvement. EWMA and $N$-report reduce churn, yet respectively leave more attack time in \Allow{} or lose substantial episode coverage; symmetric hysteresis has low \Allow{} exposure but little churn reduction.
+
+\begin{table}[t]
+\caption{Chronological held-out results at the locked 1\% tuning budget. $F$, $E_A$, $E_{NI}$, and coverage are percentages; delay is median/mean capped seconds.}
+\label{tab:aggregate}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.45pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Policy & $F$ & $E_A$ & $E_{NI}$ & $C$ & cov. & delay \\
+\midrule
+Stateless       & 0.643 & 26.812 & 26.812 & 5.114 & 85.77 & 1/4.15 \\
+EWMA (2 s)      & 0.864 & 23.118 & 23.118 & 2.712 & 83.24 & 1/4.85 \\
+$N$-report (2)  & 0.810 & 23.175 & 27.530 & 1.701 & 75.40 & 2/7.74 \\
+Sym. hysteresis & 0.758 & 21.950 & 28.103 & 4.581 & 83.91 & 1/5.19 \\
+Proposed        & 0.821 & 22.330 & 29.571 & 2.179 & 82.98 & 1/5.70 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Paired block-bootstrap 95\% intervals for proposed minus stateless are $[-5.09,-3.89]\pp$ for $E_A$ and $[-3.96,-1.69]\pp$ for coverage. The transition-rate ratio is 0.426 [0.404, 0.452], whose one-sided 95\% upper bound 0.447 clears the predeclared 0.75 gate. The median-delay difference is 0~s [0, 0]; all four formal exposure, coverage, median-delay, and churn gates pass. Mean capped delay, predeclared only as descriptive, worsens by 1.55~s [1.19, 1.94] because of Slowloris. Proposed friction is 0.821\% [0.554, 1.121]; its one-sided upper bound is 1.069\%, so the held-out point meets the budget but the data do not support a population-level ``below 1\%'' guarantee. Re-clustering into 14 one-hour groups preserves the exposure, coverage, median-delay, and churn conclusions. Strict zero-gap splitting yields 6,474 episodes, proposed/reference coverage 43.93/47.88\% ($-3.95\pp$), and median delay 1~s for both; excluding the 19 mixed-attack epochs leaves the time-weighted points effectively unchanged.
+
+\subsection{Attack-specific containment}
+Pooling hides a sharp boundary (Table~\ref{tab:attack}). Port scan, DDoS-Ripper, and DoS-Hulk all show lower \Allow{} exposure. Their paired block-bootstrap exposure-difference intervals are respectively $[-8.78,-7.28]\pp$, $[-9.68,-7.05]\pp$, and $[-4.81,-2.67]\pp$. Port-scan and Hulk coverage improve, while DDoS coverage is unchanged. Slowloris instead has $+1.23\pp$ exposure [${-0.49},3.15$], $-6.99\pp$ coverage [${-9.72},{-4.38}$], and $+4.21$~s mean delay [3.33, 5.16]. The proposed controller therefore supports lower exposure for these three high-rate attacks, not attack-agnostic superiority.
+
+\begin{table}[t]
+\caption{Per-attack held-out results: stateless/proposed. Counts are not additive because type-specific streams are segmented independently and mixed-label epochs can enter multiple streams.}
+\label{tab:attack}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Attack & episodes & $E_A$ (\%) & coverage (\%) & mean delay (s) \\
+\midrule
+Port scan   & 248 & 10.65/2.67 & 87.10/92.34 & 1.73/1.42 \\
+DDoS-Ripper & 164 & 10.35/2.10 & 89.02/89.02 & 1.51/1.54 \\
+DoS-Hulk    & 146 &  5.44/1.80 & 86.99/91.10 & 1.00/1.02 \\
+Slowloris   & 272 & 76.79/78.02 & 73.90/66.91 & 9.14/13.35 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Unseen RNTIs and sensitivities}
+For the 274 unseen numeric RNTIs, proposed versus stateless $E_A$ is 23.24\% versus 27.41\% (difference $-4.18\pp$ [${-4.99},{-3.34}$]) and churn is 2.238 versus 5.019 (ratio 0.446). For 470 seen values, the corresponding difference is $-4.69\pp$ [${-5.61},{-3.77}$] and churn ratio 0.414. Thus the security/stability direction is not driven solely by reusing numeric values. Unseen-RNTI friction is 1.289\% versus 0.924\%, with a proposed one-sided upper bound of 1.727\%; the nominal friction budget therefore does not transfer under RNTI novelty. An RNTI value is neither a durable identity nor guaranteed unique over time. The viable evaluation mobility stratum is effectively car, precluding a mobility-generalization claim.
+
+Varying the label-blind lease timeout from 5 to 300~s without refitting scores or thresholds leaves proposed \Allow{} exposure 3.85--4.51~pp below stateless and normalized churn at 35.96--36.64 versus 84.24--85.34 transitions per 1,000 observed epochs. With the prespecified depth-3 histogram gradient-boosting (HGB) scores (test AUROC 0.975), strict tuning instead selects a 5-s EWMA policy. On held-out data, its $E_A$ difference is $-4.60\pp$ [${-5.46},{-3.78}$], coverage difference $-2.93\pp$ [${-4.52},{-1.50}$], transition ratio 0.245 [0.221, 0.268], and median-delay difference 0~s: all four controller gates pass. Its benign friction is 1.186\%, however, with a one-sided upper bound of 1.890\%, so the HGB-selected framework result does not meet the held-out budget. Separately, the asymmetric-family diagnostic---already coverage-inferior by 0.59~pp in tuning---has a held-out one-sided coverage lower bound of $-5.57\pp$ and fails that gate.
+
+Finally, raw/$10^6$ produces only 64,294 one-second epochs and 29 trace blocks; test AUROC falls to 0.930. No proposed asymmetric-sequential template is budget-feasible at 1\%; the matched EWMA alternative reduces churn by only 14.5\%, below the frozen 25\% requirement. Because that scaling contradicts both the calendar epoch and observed 100~ms cadence, it is not an equally plausible primary clock, but the failure makes the study's timestamp-provenance dependence explicit.
+
+\section{Discussion and Conclusion}
+The experiment demonstrates an operational security--stability frontier, not a deployed zero-trust architecture. In particular, \Restrict{} and \Isolate{} are replayed policy intents: the public trace cannot measure scheduler enforcement, service harm, attacker adaptation, or causal prevention. The single testbed, scenario-correlated labels, largely car-only evaluation day, 56 primary clusters, inferred timestamps, and prior exploratory inspection further limit external validity. The runtime measurements are offline amortized means, not tail-latency or deployment evidence. A deployment study needs allocation/release logs, durable identity and authentication context, action-specific QoS costs, and prospective attacks; identity claims would require a dataset with genuine authentication entities and sessions.
+
+Within that scope, friction-budgeted selection changes the question from ``which smoother scores best?'' to ``which causal policy is most stable among policies that meet a declared security envelope?'' On the frozen OpenIreland replay, it cuts churn by 57.4\% and malicious \Allow{} time by $4.48\pp$ with unchanged median delay. The simultaneous increase in not-\Isolate{} exposure, the Slowloris failure, the HGB-selected policy's friction overrun, the asymmetric HGB diagnostic's coverage failure, and the timestamp sensitivity define the boundary of the publishable result rather than exceptions to omit.
+
+\IEEEtriggeratref{6}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
