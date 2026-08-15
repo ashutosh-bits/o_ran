@@ -1,0 +1,54 @@
+{
+  "protocol_status": "development",
+  "data": {
+    "path": "/nobackup/ashukuma/o_ran/dtst.csv",
+    "sha256": "4cc8498466eb7cb258412721ae94a2460f04a7da1235ac07e8e9cd20e15a76a7",
+    "separator": ";",
+    "timestamp_ticks_per_second": 100000.0,
+    "timestamp_scale_status": "empirically_inferred_pending_author_confirmation",
+    "benign_labels": ["Web Browsing", "SIPP", "iot", "youtube"],
+    "attack_labels": ["portscan", "ddos-ripper-C", "dos-hulk-C", "slowloris-C"]
+  },
+  "stream": {
+    "decision_epoch_seconds": 1.0,
+    "rnti_inactivity_timeout_seconds": 30.0,
+    "timeout_sensitivity_seconds": [5.0, 10.0, 60.0, 300.0],
+    "controller_state_may_use_labels": false,
+    "controller_state_may_cross_trace_blocks": false
+  },
+  "model": {
+    "primary": "logistic_regression",
+    "sensitivity": "hist_gradient_boosting",
+    "random_seeds": [1729, 2718, 31415, 57721, 65537],
+    "forbidden_features": [
+      "mac_rnti",
+      "ue_ident",
+      "id_ue",
+      "timestamp",
+      "mob_pattern",
+      "label",
+      "rf_error"
+    ]
+  },
+  "policy": {
+    "friction_budgets": [0.001, 0.005, 0.01, 0.02, 0.05],
+    "primary_friction_budget": 0.01,
+    "security_noninferiority_absolute": 0.02,
+    "delay_noninferiority_epochs": 1.0,
+    "minimum_transition_reduction": 0.25,
+    "smoothing_tau_seconds": [0.0, 0.5, 1.0, 2.0, 5.0, 10.0],
+    "entry_persistence_epochs": [1, 2, 3, 5],
+    "recovery_persistence_epochs": [1, 3, 5, 10],
+    "minimum_hold_seconds": [0.0, 2.0, 5.0, 10.0, 30.0],
+    "cooldown_seconds": [0.0, 2.0, 5.0, 10.0]
+  },
+  "statistics": {
+    "bootstrap_replicates": 2000,
+    "confidence_level": 0.95,
+    "time_block_sensitivity_minutes": [1, 5, 15]
+  },
+  "test_access": {
+    "locked": true,
+    "unlock_condition": "pipeline unit tests and development gates pass"
+  }
+}

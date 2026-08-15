@@ -1,0 +1,70 @@
+{
+  "protocol_status": "locked_before_formal_controller_holdout_replay",
+  "locked_utc": "2026-08-09",
+  "scope": "prespecified shallow-HGB risk-estimator sensitivity; not a replacement primary analysis",
+  "tuning_outcome": "The proposed family missed the frozen tuning episode-coverage margin by 0.59 percentage points and is retained as a diagnostic sensitivity, not declared selected.",
+  "risk_model": {
+    "kind": "depth-3 histogram gradient boosting plus Platt calibration",
+    "seed": 1729,
+    "input_scores_sha256": "4d1f93c188f2e906a74510a3d1076ccf4046b290717d984a43af9db90d66b819"
+  },
+  "policy_selection": {
+    "primary_friction_budget": 0.01,
+    "matched_candidate_metrics_sha256": "e49a4efba97789fcc82ee12dc17245d5fe913a5d1d746fe58c1bc432b9690d10",
+    "matched_specs_sha256": "6068f1f9a3c339c7e997218ae3f31f00d172f0ed840985abaef34aa1897e63e8",
+    "strict_selection_sha256": "5662be71815a4c581f828606c3471d4aadf42dea5c8ca9daea1d4a85ecf06e8a"
+  },
+  "locked_primary_policies": {
+    "stateless_reference": {
+      "candidate": "hgb-stateless-reference-0.01",
+      "controller": "stateless",
+      "parameters": {
+        "restrict_threshold": 0.9321295457149816,
+        "isolate_threshold": 0.9321295457149816
+      }
+    },
+    "proposed": {
+      "candidate": "hgb-proposed-template-010-B0.01-diagnostic",
+      "controller": "asymmetric_sequential",
+      "parameters": {
+        "entry_reports": 1,
+        "ewma_tau_s": null,
+        "isolate_enter": 0.9900933539430684,
+        "isolate_exit": 0.9650933539430684,
+        "min_isolate_hold_s": 0.0,
+        "min_restrict_hold_s": 0.0,
+        "recovery_reports": 2,
+        "restrict_enter": 0.9879329634765484,
+        "restrict_exit": 0.9629329634765483
+      }
+    },
+    "ewma": {
+      "candidate": "hgb-ewma-template-003-B0.01",
+      "controller": "ewma",
+      "parameters": {
+        "isolate_threshold": 0.8032264709472656,
+        "restrict_threshold": 0.8032264709472656,
+        "tau_s": 5.0
+      }
+    },
+    "n_report": {
+      "candidate": "hgb-n_report-template-000-B0.01",
+      "controller": "n_report",
+      "parameters": {
+        "entry_reports": 2,
+        "isolate_threshold": 0.94500732421875,
+        "recovery_reports": 2,
+        "restrict_threshold": 0.94500732421875
+      }
+    },
+    "symmetric_hysteresis": {
+      "candidate": "hgb-symmetric_hysteresis-template-001-B0.01",
+      "controller": "symmetric_hysteresis",
+      "parameters": {
+        "half_width": 0.01,
+        "isolate_center": 0.9556029510498047,
+        "restrict_center": 0.9556029510498047
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+# Frozen data-foundation parameters.  The source is read-only; derived manifests
+# and epoch tables must be written elsewhere.
+source_csv: /nobackup/ashukuma/o_ran/dtst.csv
+csv_separator: ";"
+
+ontology:
+  # IDs are explicit and deterministic, never inferred from file order.
+  labels:
+    Web Browsing: 0
+    SIPP: 1
+    youtube: 2
+    iot: 3
+    portscan: 4
+    ddos-ripper-C: 5
+    dos-hulk-C: 6
+    slowloris-C: 7
+  candidate_attack_labels:
+    - portscan
+    - ddos-ripper-C
+    - dos-hulk-C
+    - slowloris-C
+
+time:
+  # The source paper calls timestamp microseconds, but dividing the raw values by
+  # 1e5 (not 1e6) gives the plausible Oct 2022 trace and ~0.1 s/RNTI cadence.
+  # Preserve raw timestamp and treat this scale as a provenance gate.
+  timestamp_scale: 100000.0
+  causal_epoch_seconds: 1.0
+
+segmentation:
+  # Both block rules use event time only; labels/scenarios are never boundaries.
+  trace_gap_seconds: 300.0
+  max_block_seconds: 900.0
+  # A new RNTI lease is inferred only at a block boundary or per-RNTI gap.
+  # The absence of allocation/release logs makes this a sensitivity parameter.
+  rnti_lease_gap_seconds: 30.0
+
+splits:
+  names:
+    - train
+    - calibration
+    - controller_tune
+    - test
+  cuts_utc:
+    - "2022-10-26T00:00:00Z"
+    - "2022-10-26T12:00:00Z"
+    - "2022-10-27T00:00:00Z"
+  boundary_policy: assign_block_by_end_time_crossing_block_moves_later
+  novelty_reference:
+    - train
+    - calibration
+    - controller_tune
+  evaluation_split: test
+
+identity_caveats:
+  duplicate_columns:
+    - mac_rnti
+    - ue_ident
+  context_only: id_ue
+  durable_subscriber_identity_available: false

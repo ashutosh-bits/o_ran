@@ -1,0 +1,172 @@
+{
+  "protocol_status": "locked_before_formal_controller_holdout_replay",
+  "locked_utc": "2026-08-09",
+  "study_title": "Friction-Budgeted Stabilization of RNTI-Level Containment in O-RAN",
+  "scope": {
+    "unit": "temporary RNTI lifecycle within an observable trace block",
+    "actions": ["ALLOW", "RESTRICT", "ISOLATE"],
+    "evidence_type": "offline causal policy replay",
+    "excluded_claims": [
+      "durable user or device identity",
+      "authentication or MFA efficacy",
+      "resource-level authorization",
+      "causal attack prevention",
+      "deployed QoS impact"
+    ]
+  },
+  "data": {
+    "path": "/nobackup/ashukuma/o_ran/dtst.csv",
+    "sha256": "4cc8498466eb7cb258412721ae94a2460f04a7da1235ac07e8e9cd20e15a76a7",
+    "timestamp_ticks_per_second_primary": 100000.0,
+    "timestamp_status": "empirically_inferred; authoritative unit unresolved at lock",
+    "decision_epoch_seconds": 1.0,
+    "rnti_inactivity_timeout_seconds": 30.0,
+    "trace_gap_seconds": 300.0,
+    "maximum_observable_block_seconds": 900.0,
+    "primary_cluster": "label-blind observable 15-minute trace block",
+    "cluster_wording": "trace block, never true capture or campaign"
+  },
+  "partitions": {
+    "risk_train": "whole trace blocks through 2022-10-25 UTC",
+    "probability_calibration": "whole trace blocks in first part of 2022-10-26 UTC",
+    "controller_tune": "whole trace blocks in second part of 2022-10-26 UTC",
+    "controller_evaluation": "whole trace blocks on 2022-10-27 UTC",
+    "test_blindness_caveat": "The full trace and preliminary go/no-go policy behavior were audited before lock, and risk diagnostics were computed on all partitions. Formal candidate thresholds and selection used controller_tune only. The evaluation partition is therefore a frozen chronological controller-policy outcome holdout, not a never-inspected test set."
+  },
+  "risk_model": {
+    "primary": "regularized logistic regression plus Platt calibration",
+    "seed": 1729,
+    "input_scores_sha256": "438c8cdd333b307015b1a8972574179875ab384d6524962e0ffef066b4d75831",
+    "forbidden_inputs": [
+      "mac_rnti",
+      "ue_ident",
+      "id_ue",
+      "timestamp",
+      "decision_time_s",
+      "mob_pattern",
+      "label",
+      "rf_error",
+      "samples_in_epoch"
+    ],
+    "sensitivity": "depth-3 histogram gradient boosting with the same allowed KPI features"
+  },
+  "policy_selection": {
+    "selection_partition": "controller_tune",
+    "friction_budgets": [0.001, 0.005, 0.01, 0.02, 0.05],
+    "primary_friction_budget": 0.01,
+    "budget_minimum_utilization": 0.95,
+    "budget_atomic_tolerance": "one maximum positive benign epoch divided by benign entity-time",
+    "allow_exposure_noninferiority_absolute": 0.02,
+    "not_isolated_exposure_noninferiority_absolute": 0.05,
+    "episode_coverage_noninferiority_absolute": 0.05,
+    "median_capped_delay_noninferiority_seconds": 1.0,
+    "minimum_transition_reduction": 0.25,
+    "selection_order": [
+      "budget match",
+      "ALLOW-exposure noninferiority",
+      "not-ISOLATED-exposure noninferiority",
+      "episode-coverage noninferiority",
+      "capped-delay noninferiority",
+      "closest-budget stratum",
+      "minimum transitions per entity-minute"
+    ],
+    "matched_candidate_metrics_sha256": "875827728357b5e4eec604b84d717371d802195d7bd8a8ecfbe5e04aabcc9cbe",
+    "matched_specs_sha256": "0a1e3fca9a101a31a8326e64cbcfa3590c3ab01ee3294d15fad9567bf75c1934",
+    "strict_selection_sha256": "9492458a92f3dccbc550d2aa29ab7c7bf407fd34e99f903ba1b893074ab964a6"
+  },
+  "locked_primary_policies": {
+    "stateless_reference": {
+      "candidate": "stateless-reference-0.01",
+      "controller": "stateless",
+      "parameters": {
+        "restrict_threshold": 0.8753676264292061,
+        "isolate_threshold": 0.8753676264292061
+      }
+    },
+    "proposed": {
+      "candidate": "proposed-template-047-B0.01",
+      "controller": "asymmetric_sequential",
+      "parameters": {
+        "entry_reports": 1,
+        "ewma_tau_s": null,
+        "isolate_enter": 0.9968760822163045,
+        "isolate_exit": 0.9468760822163045,
+        "min_isolate_hold_s": 0.0,
+        "min_restrict_hold_s": 0.0,
+        "recovery_reports": 2,
+        "restrict_enter": 0.9550302859794721,
+        "restrict_exit": 0.9050302859794721
+      }
+    },
+    "ewma": {
+      "candidate": "ewma-template-002-B0.01",
+      "controller": "ewma",
+      "parameters": {
+        "restrict_threshold": 0.7925529479980469,
+        "isolate_threshold": 0.7925529479980469,
+        "tau_s": 2.0
+      }
+    },
+    "n_report": {
+      "candidate": "n_report-template-000-B0.01",
+      "controller": "n_report",
+      "parameters": {
+        "restrict_threshold": 0.8973007202148438,
+        "isolate_threshold": 0.8973007202148438,
+        "entry_reports": 2,
+        "recovery_reports": 2
+      },
+      "tuning_status": "coverage-inferior diagnostic baseline"
+    },
+    "symmetric_hysteresis": {
+      "candidate": "symmetric_hysteresis-template-003-B0.01",
+      "controller": "symmetric_hysteresis",
+      "parameters": {
+        "restrict_center": 0.8885658264160154,
+        "isolate_center": 0.8885658264160154,
+        "half_width": 0.05
+      },
+      "tuning_status": "insufficient-transition-reduction diagnostic baseline"
+    }
+  },
+  "primary_estimands": {
+    "benign_friction": "benign RNTI-time in RESTRICT or ISOLATE divided by benign RNTI-time",
+    "malicious_allow": "attack-labeled RNTI-time in ALLOW divided by attack-labeled RNTI-time",
+    "malicious_not_isolated": "attack-labeled RNTI-time in ALLOW or RESTRICT divided by attack-labeled RNTI-time",
+    "policy_churn": "ALLOW/RESTRICT/ISOLATE state changes per observed RNTI-minute",
+    "episode_coverage": "fraction of attack-labeled RNTI episodes reaching at least RESTRICT",
+    "delay": "onset-to-first-RESTRICT delay with misses censored and capped at 30 seconds"
+  },
+  "confirmatory_claim_sequence": [
+    "report realized holdout friction and its 95% block-bootstrap interval; do not retune",
+    "test ALLOW-exposure difference proposed minus stateless against +0.02",
+    "test episode-coverage difference against -0.05 and capped-delay difference against +1 second",
+    "test transition-rate ratio proposed/stateless against 0.75",
+    "treat not-ISOLATED exposure and all per-attack comparisons as mandatory descriptive safeguards"
+  ],
+  "evaluation": {
+    "one_epoch_action_lag": true,
+    "controller_state_uses_labels": false,
+    "controller_state_crosses_trace_blocks": false,
+    "primary_bootstrap_clusters": "trace_block_id",
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 1729,
+    "confidence_level": 0.95,
+    "mandatory_strata": [
+      "all",
+      "seen numeric RNTI",
+      "unseen numeric RNTI",
+      "car",
+      "pedestrian",
+      "portscan",
+      "ddos-ripper-C",
+      "dos-hulk-C",
+      "slowloris-C"
+    ],
+    "mandatory_episode_safeguards": [
+      "pre-contained at onset",
+      "not pre-contained at onset",
+      "mixed-attack epoch exclusion sensitivity"
+    ]
+  }
+}
