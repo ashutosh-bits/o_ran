@@ -1,0 +1,46 @@
+{
+  "aggregate_path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/sensitivities/lease_timeout_action_metrics_v1.parquet",
+  "candidate_lock_sha256": "52eedcea2437afcfe8d7129fdf689c8ba86a18c06adb4ac0c4c95fab5b9e48c0",
+  "diagnostics": [
+    {
+      "lease_timeout_s": 5.0,
+      "rnti_leases_all_splits": 10984,
+      "test_epochs": 101561,
+      "test_rnti_leases": 2211
+    },
+    {
+      "lease_timeout_s": 10.0,
+      "rnti_leases_all_splits": 8152,
+      "test_epochs": 101561,
+      "test_rnti_leases": 1504
+    },
+    {
+      "lease_timeout_s": 30.0,
+      "rnti_leases_all_splits": 5892,
+      "test_epochs": 101561,
+      "test_rnti_leases": 932
+    },
+    {
+      "lease_timeout_s": 60.0,
+      "rnti_leases_all_splits": 5658,
+      "test_epochs": 101561,
+      "test_rnti_leases": 886
+    },
+    {
+      "lease_timeout_s": 300.0,
+      "rnti_leases_all_splits": 5644,
+      "test_epochs": 101561,
+      "test_rnti_leases": 882
+    }
+  ],
+  "episode_path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/sensitivities/lease_timeout_episode_metrics_v1.parquet",
+  "risk_scores_refit": false,
+  "thresholds_retuned": false,
+  "timeouts_s": [
+    5.0,
+    10.0,
+    30.0,
+    60.0,
+    300.0
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "ewma-template-000-B0.01": {
+    "candidate": "ewma-template-000-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.9027290344238281,
+      "restrict_threshold": 0.9027290344238281,
+      "tau_s": 0.5
+    }
+  },
+  "ewma-template-001-B0.01": {
+    "candidate": "ewma-template-001-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.8997268676757812,
+      "restrict_threshold": 0.8997268676757812,
+      "tau_s": 1.0
+    }
+  },
+  "ewma-template-002-B0.01": {
+    "candidate": "ewma-template-002-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.9111862182617188,
+      "restrict_threshold": 0.9111862182617188,
+      "tau_s": 2.0
+    }
+  },
+  "ewma-template-003-B0.01": {
+    "candidate": "ewma-template-003-B0.01",
+    "controller": "ewma",
+    "family": "ewma",
+    "parameters": {
+      "isolate_threshold": 0.9318733215332031,
+      "restrict_threshold": 0.9318733215332031,
+      "tau_s": 5.0
+    }
+  },
+  "n_report-template-000-B0.01": {
+    "candidate": "n_report-template-000-B0.01",
+    "controller": "n_report",
+    "family": "n_report",
+    "parameters": {
+      "entry_reports": 2,
+      "isolate_threshold": 1.0,
+      "recovery_reports": 2,
+      "restrict_threshold": 1.0
+    }
+  },
+  "n_report-template-001-B0.01": {
+    "candidate": "n_report-template-001-B0.01",
+    "controller": "n_report",
+    "family": "n_report",
+    "parameters": {
+      "entry_reports": 3,
+      "isolate_threshold": 1.0,
+      "recovery_reports": 3,
+      "restrict_threshold": 1.0
+    }
+  },
+  "n_report-template-002-B0.01": {
+    "candidate": "n_report-template-002-B0.01",
+    "controller": "n_report",
+    "family": "n_report",
+    "parameters": {
+      "entry_reports": 5,
+      "isolate_threshold": 1.0,
+      "recovery_reports": 5,
+      "restrict_threshold": 1.0
+    }
+  },
+  "stateless-template-000-B0.01": {
+    "candidate": "stateless-template-000-B0.01",
+    "controller": "stateless",
+    "family": "stateless",
+    "parameters": {
+      "isolate_threshold": 0.9113235473632812,
+      "restrict_threshold": 0.9113235473632812
+    }
+  },
+  "symmetric_hysteresis-template-000-B0.01": {
+    "candidate": "symmetric_hysteresis-template-000-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.005,
+      "isolate_center": 0.995,
+      "restrict_center": 0.995
+    }
+  },
+  "symmetric_hysteresis-template-001-B0.01": {
+    "candidate": "symmetric_hysteresis-template-001-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.01,
+      "isolate_center": 0.99,
+      "restrict_center": 0.99
+    }
+  },
+  "symmetric_hysteresis-template-002-B0.01": {
+    "candidate": "symmetric_hysteresis-template-002-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.025,
+      "isolate_center": 0.975,
+      "restrict_center": 0.975
+    }
+  },
+  "symmetric_hysteresis-template-003-B0.01": {
+    "candidate": "symmetric_hysteresis-template-003-B0.01",
+    "controller": "symmetric_hysteresis",
+    "family": "symmetric_hysteresis",
+    "parameters": {
+      "half_width": 0.05,
+      "isolate_center": 0.95,
+      "restrict_center": 0.95
+    }
+  }
+}

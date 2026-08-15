@@ -1,0 +1,1628 @@
+{
+  "benchmark_version": 1,
+  "correctness": {
+    "controllers": [
+      {
+        "candidate": "stateless-reference-0.01",
+        "exact_state_match": true,
+        "family": "stateless_reference",
+        "rows": 101561,
+        "state_sha256": "681573bf3aafc45e7fbc5a92c88948e1facd75ec1305df8195b465d340512396"
+      },
+      {
+        "candidate": "proposed-template-047-B0.01",
+        "exact_state_match": true,
+        "family": "proposed",
+        "rows": 101561,
+        "state_sha256": "993c436799759d3369d5ba81d8acba2dec82467e47878a70b1c86ac45297fd9b"
+      },
+      {
+        "candidate": "ewma-template-002-B0.01",
+        "exact_state_match": true,
+        "family": "ewma",
+        "rows": 101561,
+        "state_sha256": "05344b5e52f55bc41df0f76215a8f6b2c1145ad14b3ce07b2b6fbde9395faaf2"
+      },
+      {
+        "candidate": "n_report-template-000-B0.01",
+        "exact_state_match": true,
+        "family": "n_report",
+        "rows": 101561,
+        "state_sha256": "0d11e9932211ed3fab13a90603899cc9aa9adbd27b3b94d5c20d589fc0bf3c4a"
+      },
+      {
+        "candidate": "symmetric_hysteresis-template-003-B0.01",
+        "exact_state_match": true,
+        "family": "symmetric_hysteresis",
+        "rows": 101561,
+        "state_sha256": "4c69825322bb5cc1b625ae4893d69466adea8fce976253e7a6a347c01c24fcd1"
+      }
+    ],
+    "epoch_score_keys_exactly_aligned": true,
+    "fresh_risk_sha256": "91f928874160cf3da42c82ca2dd1e31b763c2f711b6688b2d1adbfcd17bc73c5",
+    "frozen_risk_sha256": "17cc385b8460203b04728ddf83dfbb19adb9ae0496574a3811b171436489366d",
+    "held_out_rows": 101561,
+    "risk_score_allclose_atol_1e_12": true,
+    "risk_score_max_abs_error": 2.7755575615628914e-16
+  },
+  "inputs": {
+    "action_trace": {
+      "path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/confirmatory/action_trace_v2.parquet",
+      "sha256": "c10ff1a1aa8688d51002a491bf17452416f705824f8b8e8cf8ed63cd5b0b1b45"
+    },
+    "epochs": {
+      "path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/epochs/epochs_1s_v1.parquet",
+      "sha256": "518518d22d538981b03541c628d2468b81f5668beff0d76ff601faa2e6173d12"
+    },
+    "model": {
+      "path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/models/logistic_seed1729_v1.joblib",
+      "sha256": "b372ebf622420b3a0b47d170a0474edd4b88e375e5be7c8f643e8fa1122515b6"
+    },
+    "protocol": {
+      "path": "/nobackup/ashukuma/xr/o_ran_publication/configs/study_protocol_v1_locked.json",
+      "sha256": "c862d5dbc42be0a27f92f39ec3a73829e21f1e710958c98664fde3be67c8f2cb"
+    },
+    "scores": {
+      "path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/results/scores_logistic_seed1729_v1.parquet",
+      "sha256": "438c8cdd333b307015b1a8972574179875ab384d6524962e0ffef066b4d75831"
+    }
+  },
+  "limitations": [
+    "offline in-memory microbenchmark, not deployed near-real-time RIC timing",
+    "amortized batch microseconds per report, not per-request tail latency",
+    "excludes telemetry, transport, serialization, scheduling, and actuation",
+    "shared virtualized host load and frequency can affect wall-clock results",
+    "Linux RSS/HWM includes process and inputs; incremental memory is observational"
+  ],
+  "outputs": {
+    "summary_csv": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/benchmarks/benchmark_summary_v1.csv",
+    "trials_csv": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/benchmarks/benchmark_trials_v1.csv"
+  },
+  "protocol": {
+    "cold_definition": "first invocation with model and input already resident",
+    "cpu_affinity_target_count": 1,
+    "evaluation_split": "test",
+    "fresh_process_per_workload": true,
+    "held_out_rows": 101561,
+    "repetitions": 15,
+    "thread_limit": 1,
+    "timed_region_excludes_io_and_deserialization": true,
+    "warm_definition": "recorded invocations after first call and unreported warmups",
+    "warmups": 2
+  },
+  "results": [
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "calibrated_logistic",
+      "feature_columns": [
+        "mac_dl_cqi",
+        "mac_dl_mcs",
+        "mac_dl_brate",
+        "mac_dl_ok",
+        "mac_dl_nok",
+        "phy_ul_pusch_sinr",
+        "phy_ul_pucch_sinr",
+        "phy_ul_mcs",
+        "mac_ul_brate",
+        "mac_ul_ok",
+        "mac_ul_nok",
+        "mac_ul_bsr",
+        "mac_nof_tti",
+        "mac_dl_buffer",
+        "mac_phr",
+        "mac_dl_cqi_offset",
+        "mac_ul_snr_offset",
+        "phy_ul_pusch_rssi",
+        "phy_ul_pucch_rssi",
+        "phy_ul_pucch_ni",
+        "phy_ul_turbo_iters",
+        "phy_ul_n_samples",
+        "phy_ul_n_samples_pucch",
+        "phy_dl_mcs",
+        "phy_dl_n_samples"
+      ],
+      "features": 25,
+      "first_in_memory_reports_per_s": 2342721.4580054246,
+      "first_in_memory_s": 0.043351718,
+      "first_in_memory_us_per_report": 0.4268539892281486,
+      "frozen_output_sha256": "17cc385b8460203b04728ddf83dfbb19adb9ae0496574a3811b171436489366d",
+      "input_frame_estimated_bytes": 20312200,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 277024,
+          "rss_kib": 239040
+        },
+        "after_import": {
+          "hwm_kib": 154360,
+          "rss_kib": 154360
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 278720,
+          "rss_kib": 240348
+        },
+        "input_ready": {
+          "hwm_kib": 208644,
+          "rss_kib": 201028
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 70076,
+        "unit": "KiB"
+      },
+      "output_allclose_atol_1e_12": true,
+      "output_bytes": 812488,
+      "output_max_abs_error": 0.0,
+      "output_sha256": "17cc385b8460203b04728ddf83dfbb19adb9ae0496574a3811b171436489366d",
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.034380337,
+        0.029525225,
+        0.025962725,
+        0.028335629,
+        0.026479333,
+        0.029023761,
+        0.026265286,
+        0.03088989,
+        0.029238188,
+        0.029535266,
+        0.026994868,
+        0.030833489,
+        0.027051732,
+        0.02879915,
+        0.025750036
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.08149149696752175,
+        "maximum_s": 0.034380337,
+        "mean_s": 0.02860432766666666,
+        "median_reports_per_s": 3526527.692657596,
+        "median_s": 0.02879915,
+        "median_us_per_report": 0.2835650495761168,
+        "minimum_s": 0.025750036,
+        "p05_s": 0.0258989183,
+        "p25_s": 0.0267371005,
+        "p75_s": 0.0295302455,
+        "p95_s": 0.031937024099999996,
+        "repetitions": 15,
+        "stdev_s": 0.002331009481306165
+      },
+      "workload": "risk_score_batch"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "stateless-reference-0.01",
+      "controller_kind": "stateless",
+      "family": "stateless_reference",
+      "first_in_memory_reports_per_s": 300282.4306444298,
+      "first_in_memory_s": 0.338218256,
+      "first_in_memory_us_per_report": 3.330198166619076,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 196024,
+          "rss_kib": 194828
+        },
+        "after_import": {
+          "hwm_kib": 154476,
+          "rss_kib": 154476
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 196024,
+          "rss_kib": 191704
+        },
+        "input_ready": {
+          "hwm_kib": 196024,
+          "rss_kib": 196024
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 0,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 101561,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.329787861,
+        0.335037441,
+        0.33311932,
+        0.337134344,
+        0.342863886,
+        0.329696141,
+        0.330012791,
+        0.329724018,
+        0.336258588,
+        0.347057264,
+        0.333378232,
+        0.328873719,
+        0.329355986,
+        0.330218182,
+        0.329203484
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 59011,
+        "2": 42550
+      },
+      "state_sha256": "681573bf3aafc45e7fbc5a92c88948e1facd75ec1305df8195b465d340512396",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.016372290791895856,
+        "maximum_s": 0.347057264,
+        "mean_s": 0.3334480838000001,
+        "median_reports_per_s": 307557.2622466924,
+        "median_s": 0.330218182,
+        "median_us_per_report": 3.251427043845571,
+        "minimum_s": 0.328873719,
+        "p05_s": 0.3291045545,
+        "p25_s": 0.3297100795,
+        "p75_s": 0.33564801450000004,
+        "p95_s": 0.3441218994,
+        "repetitions": 15,
+        "stdev_s": 0.005459308991974059
+      },
+      "workload": "controller_online_update"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "proposed-template-047-B0.01",
+      "controller_kind": "asymmetric_sequential",
+      "family": "proposed",
+      "first_in_memory_reports_per_s": 297423.19427666883,
+      "first_in_memory_s": 0.34146967,
+      "first_in_memory_us_per_report": 3.3622125619086063,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 198116,
+          "rss_kib": 196920
+        },
+        "after_import": {
+          "hwm_kib": 155000,
+          "rss_kib": 155000
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 198116,
+          "rss_kib": 193796
+        },
+        "input_ready": {
+          "hwm_kib": 198116,
+          "rss_kib": 198116
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 0,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 101561,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.334201898,
+        0.335810109,
+        0.348599055,
+        0.333217317,
+        0.336484581,
+        0.332931825,
+        0.333031274,
+        0.332645419,
+        0.332601363,
+        0.333164135,
+        0.332976749,
+        0.333797271,
+        0.333412108,
+        0.333825388,
+        0.333420213
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56233,
+        "1": 4538,
+        "2": 40790
+      },
+      "state_sha256": "993c436799759d3369d5ba81d8acba2dec82467e47878a70b1c86ac45297fd9b",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.011972675546415049,
+        "maximum_s": 0.348599055,
+        "mean_s": 0.3346745803333334,
+        "median_reports_per_s": 304611.0131069385,
+        "median_s": 0.333412108,
+        "median_us_per_report": 3.2828753950827583,
+        "minimum_s": 0.332601363,
+        "p05_s": 0.3326322022,
+        "p25_s": 0.33300401150000003,
+        "p75_s": 0.334013643,
+        "p95_s": 0.3401189232,
+        "repetitions": 15,
+        "stdev_s": 0.00400695016396362
+      },
+      "workload": "controller_online_update"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "ewma-template-002-B0.01",
+      "controller_kind": "ewma",
+      "family": "ewma",
+      "first_in_memory_reports_per_s": 273100.95062719024,
+      "first_in_memory_s": 0.3718808,
+      "first_in_memory_us_per_report": 3.661649648979431,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 194840,
+          "rss_kib": 193716
+        },
+        "after_import": {
+          "hwm_kib": 154360,
+          "rss_kib": 154360
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 194840,
+          "rss_kib": 190700
+        },
+        "input_ready": {
+          "hwm_kib": 194840,
+          "rss_kib": 194840
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 0,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 101561,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.371492338,
+        0.369871369,
+        0.385674709,
+        0.369505697,
+        0.369783377,
+        0.367633533,
+        0.372612695,
+        0.377967048,
+        0.367053918,
+        0.368979795,
+        0.369994805,
+        0.371821052,
+        0.371124036,
+        0.376373696,
+        0.37098891
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56793,
+        "2": 44768
+      },
+      "state_sha256": "05344b5e52f55bc41df0f76215a8f6b2c1145ad14b3ce07b2b6fbde9395faaf2",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.012778915361835,
+        "maximum_s": 0.385674709,
+        "mean_s": 0.3720584652,
+        "median_reports_per_s": 273757.50935519877,
+        "median_s": 0.37098891,
+        "median_us_per_report": 3.6528678331249202,
+        "minimum_s": 0.367053918,
+        "p05_s": 0.3674596485,
+        "p25_s": 0.369644537,
+        "p75_s": 0.3722168735,
+        "p95_s": 0.3802793463,
+        "repetitions": 15,
+        "stdev_s": 0.004754503636445033
+      },
+      "workload": "controller_online_update"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "n_report-template-000-B0.01",
+      "controller_kind": "n_report",
+      "family": "n_report",
+      "first_in_memory_reports_per_s": 296064.3886013114,
+      "first_in_memory_s": 0.343036866,
+      "first_in_memory_us_per_report": 3.377643642736877,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 194892,
+          "rss_kib": 193620
+        },
+        "after_import": {
+          "hwm_kib": 154652,
+          "rss_kib": 154652
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 194892,
+          "rss_kib": 190608
+        },
+        "input_ready": {
+          "hwm_kib": 194892,
+          "rss_kib": 194892
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 0,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 101561,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.336221622,
+        0.333808066,
+        0.33441875,
+        0.334573714,
+        0.335203556,
+        0.333959621,
+        0.334246294,
+        0.333659285,
+        0.337663148,
+        0.335448944,
+        0.335120416,
+        0.335848835,
+        0.333446024,
+        0.335930383,
+        0.339176544
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56736,
+        "1": 2778,
+        "2": 42047
+      },
+      "state_sha256": "0d11e9932211ed3fab13a90603899cc9aa9adbd27b3b94d5c20d589fc0bf3c4a",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.004699434120852502,
+        "maximum_s": 0.339176544,
+        "mean_s": 0.3352483468,
+        "median_reports_per_s": 303058.22967228596,
+        "median_s": 0.335120416,
+        "median_us_per_report": 3.299695906893394,
+        "minimum_s": 0.333446024,
+        "p05_s": 0.33359530670000004,
+        "p25_s": 0.33410295749999996,
+        "p75_s": 0.335889609,
+        "p95_s": 0.33811716680000004,
+        "repetitions": 15,
+        "stdev_s": 0.0015754775199113126
+      },
+      "workload": "controller_online_update"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "symmetric_hysteresis-template-003-B0.01",
+      "controller_kind": "symmetric_hysteresis",
+      "family": "symmetric_hysteresis",
+      "first_in_memory_reports_per_s": 291725.3493889388,
+      "first_in_memory_s": 0.348139098,
+      "first_in_memory_us_per_report": 3.427881745945786,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 197024,
+          "rss_kib": 195752
+        },
+        "after_import": {
+          "hwm_kib": 155088,
+          "rss_kib": 155088
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 197024,
+          "rss_kib": 192844
+        },
+        "input_ready": {
+          "hwm_kib": 197024,
+          "rss_kib": 197024
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 0,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 101561,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.330057368,
+        0.33168289,
+        0.331587486,
+        0.335438213,
+        0.33151406,
+        0.336382962,
+        0.332387775,
+        0.342261505,
+        0.341215637,
+        0.334155365,
+        0.332025083,
+        0.334018643,
+        0.331736806,
+        0.33326004,
+        0.333215319
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56094,
+        "1": 3758,
+        "2": 41709
+      },
+      "state_sha256": "4c69825322bb5cc1b625ae4893d69466adea8fce976253e7a6a347c01c24fcd1",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.010544940165022172,
+        "maximum_s": 0.342261505,
+        "mean_s": 0.3340626101333333,
+        "median_reports_per_s": 304790.90908782615,
+        "median_s": 0.333215319,
+        "median_us_per_report": 3.280937751696025,
+        "minimum_s": 0.330057368,
+        "p05_s": 0.3310770524,
+        "p25_s": 0.33170984800000003,
+        "p75_s": 0.334796789,
+        "p95_s": 0.3415293974,
+        "repetitions": 15,
+        "stdev_s": 0.0035226702352271293
+      },
+      "workload": "controller_online_update"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "stateless-reference-0.01",
+      "controller_kind": "stateless",
+      "family": "stateless_reference",
+      "first_in_memory_reports_per_s": 261975.32599523835,
+      "first_in_memory_s": 0.387673914,
+      "first_in_memory_us_per_report": 3.817153375803704,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 219432,
+          "rss_kib": 219432
+        },
+        "after_import": {
+          "hwm_kib": 154648,
+          "rss_kib": 154648
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 227564,
+          "rss_kib": 220820
+        },
+        "input_ready": {
+          "hwm_kib": 198396,
+          "rss_kib": 198396
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 29168,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 4468684,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.343016693,
+        0.340496746,
+        0.338950919,
+        0.339579978,
+        0.339904082,
+        0.340094124,
+        0.33917359,
+        0.340333458,
+        0.339834996,
+        0.340540556,
+        0.339529173,
+        0.339702978,
+        0.340054195,
+        0.339522233,
+        0.339580753
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 59011,
+        "2": 42550
+      },
+      "state_sha256": "681573bf3aafc45e7fbc5a92c88948e1facd75ec1305df8195b465d340512396",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.0027752072971004562,
+        "maximum_s": 0.343016693,
+        "mean_s": 0.3400209649333333,
+        "median_reports_per_s": 298853.85906517995,
+        "median_s": 0.339834996,
+        "median_us_per_report": 3.346117072498301,
+        "minimum_s": 0.338950919,
+        "p05_s": 0.33910678870000005,
+        "p25_s": 0.3395545755,
+        "p75_s": 0.340213791,
+        "p95_s": 0.3412833971,
+        "repetitions": 15,
+        "stdev_s": 0.0009436286630501249
+      },
+      "workload": "controller_batch_trace"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "proposed-template-047-B0.01",
+      "controller_kind": "asymmetric_sequential",
+      "family": "proposed",
+      "first_in_memory_reports_per_s": 256780.03224909023,
+      "first_in_memory_s": 0.395517514,
+      "first_in_memory_us_per_report": 3.8943838087454834,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 217972,
+          "rss_kib": 217972
+        },
+        "after_import": {
+          "hwm_kib": 154796,
+          "rss_kib": 154796
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 226108,
+          "rss_kib": 219464
+        },
+        "input_ready": {
+          "hwm_kib": 196852,
+          "rss_kib": 196852
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 29256,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 4468684,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.345424144,
+        0.344565104,
+        0.349166772,
+        0.350155948,
+        0.349090369,
+        0.349745206,
+        0.356192898,
+        0.346013694,
+        0.347215733,
+        0.349811886,
+        0.34936,
+        0.350065663,
+        0.352397794,
+        0.345512898,
+        0.345454237
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56233,
+        "1": 4538,
+        "2": 40790
+      },
+      "state_sha256": "993c436799759d3369d5ba81d8acba2dec82467e47878a70b1c86ac45297fd9b",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.00890161587804765,
+        "maximum_s": 0.356192898,
+        "mean_s": 0.3486781564,
+        "median_reports_per_s": 290866.7380297,
+        "median_s": 0.349166772,
+        "median_us_per_report": 3.4380005317001605,
+        "minimum_s": 0.344565104,
+        "p05_s": 0.345166432,
+        "p25_s": 0.345763296,
+        "p75_s": 0.3499387745,
+        "p95_s": 0.3535363252,
+        "repetitions": 15,
+        "stdev_s": 0.003103799013338622
+      },
+      "workload": "controller_batch_trace"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "ewma-template-002-B0.01",
+      "controller_kind": "ewma",
+      "family": "ewma",
+      "first_in_memory_reports_per_s": 237436.79155150047,
+      "first_in_memory_s": 0.427739102,
+      "first_in_memory_us_per_report": 4.211647207097212,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 216728,
+          "rss_kib": 216728
+        },
+        "after_import": {
+          "hwm_kib": 155092,
+          "rss_kib": 155092
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 223932,
+          "rss_kib": 218220
+        },
+        "input_ready": {
+          "hwm_kib": 192652,
+          "rss_kib": 192652
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 31280,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 4468684,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.386134213,
+        0.37932862,
+        0.380232475,
+        0.374812576,
+        0.377810418,
+        0.380586578,
+        0.372786751,
+        0.371158819,
+        0.372428534,
+        0.37084039,
+        0.372351266,
+        0.371000954,
+        0.371805567,
+        0.371138185,
+        0.371394168
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56793,
+        "2": 44768
+      },
+      "state_sha256": "05344b5e52f55bc41df0f76215a8f6b2c1145ad14b3ce07b2b6fbde9395faaf2",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.012628301029426635,
+        "maximum_s": 0.386134213,
+        "mean_s": 0.3749206342666668,
+        "median_reports_per_s": 272699.2985988555,
+        "median_s": 0.372428534,
+        "median_us_per_report": 3.6670428018629195,
+        "minimum_s": 0.37084039,
+        "p05_s": 0.3709527848,
+        "p25_s": 0.3712764935,
+        "p75_s": 0.378569519,
+        "p95_s": 0.3822508685,
+        "repetitions": 15,
+        "stdev_s": 0.004734610631663035
+      },
+      "workload": "controller_batch_trace"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "n_report-template-000-B0.01",
+      "controller_kind": "n_report",
+      "family": "n_report",
+      "first_in_memory_reports_per_s": 260082.4584390864,
+      "first_in_memory_s": 0.390495386,
+      "first_in_memory_us_per_report": 3.8449344334931714,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 215384,
+          "rss_kib": 215384
+        },
+        "after_import": {
+          "hwm_kib": 155072,
+          "rss_kib": 155072
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 223504,
+          "rss_kib": 216676
+        },
+        "input_ready": {
+          "hwm_kib": 194480,
+          "rss_kib": 194480
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 29024,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 4468684,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.345398701,
+        0.343839467,
+        0.34555943,
+        0.341412891,
+        0.344853783,
+        0.343463203,
+        0.344655234,
+        0.342240972,
+        0.344414572,
+        0.345234373,
+        0.342372215,
+        0.373311262,
+        0.3449759,
+        0.341609976,
+        0.342923516
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56736,
+        "1": 2778,
+        "2": 42047
+      },
+      "state_sha256": "0d11e9932211ed3fab13a90603899cc9aa9adbd27b3b94d5c20d589fc0bf3c4a",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.022416301241364196,
+        "maximum_s": 0.373311262,
+        "mean_s": 0.34575103299999993,
+        "median_reports_per_s": 294880.0900328921,
+        "median_s": 0.344414572,
+        "median_us_per_report": 3.391208948316775,
+        "minimum_s": 0.341412891,
+        "p05_s": 0.3415508505,
+        "p25_s": 0.3426478655,
+        "p75_s": 0.34510513649999996,
+        "p95_s": 0.3538849796,
+        "repetitions": 15,
+        "stdev_s": 0.007750459310240852
+      },
+      "workload": "controller_batch_trace"
+    },
+    {
+      "affinity": {
+        "allowed_after": [
+          0
+        ],
+        "allowed_before": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "error": null,
+        "requested": true,
+        "selected_cpu": 0,
+        "supported": true
+      },
+      "candidate": "symmetric_hysteresis-template-003-B0.01",
+      "controller_kind": "symmetric_hysteresis",
+      "family": "symmetric_hysteresis",
+      "first_in_memory_reports_per_s": 248643.83944143253,
+      "first_in_memory_s": 0.408459748,
+      "first_in_memory_us_per_report": 4.021816917911403,
+      "input_array_bytes": 3249952,
+      "memory": {
+        "after_first_invocation": {
+          "hwm_kib": 217216,
+          "rss_kib": 217216
+        },
+        "after_import": {
+          "hwm_kib": 154928,
+          "rss_kib": 154928
+        },
+        "after_repeated_invocations": {
+          "hwm_kib": 225324,
+          "rss_kib": 218580
+        },
+        "input_ready": {
+          "hwm_kib": 196308,
+          "rss_kib": 196308
+        },
+        "interpretation": "Linux whole-process resident memory; inputs and interpreter are included. The high-water increment is observational and allocator reuse can make it understate transient workload demand.",
+        "new_high_water_increment_after_input_ready_kib": 29016,
+        "unit": "KiB"
+      },
+      "output_array_bytes": 4468684,
+      "polars_thread_pool_size": 1,
+      "raw_warm_seconds": [
+        0.344873255,
+        0.346602284,
+        0.343121009,
+        0.343909539,
+        0.340662406,
+        0.342364042,
+        0.346852484,
+        0.34409724,
+        0.342256965,
+        0.341289614,
+        0.341592448,
+        0.343749898,
+        0.343392507,
+        0.343734398,
+        0.343184127
+      ],
+      "rows": 101561,
+      "software": {
+        "joblib": "1.5.3",
+        "numpy": "2.4.6",
+        "polars": "1.43.2",
+        "python": "3.11.13",
+        "scikit_learn": "1.9.0"
+      },
+      "state_counts": {
+        "0": 56094,
+        "1": 3758,
+        "2": 41709
+      },
+      "state_sha256": "4c69825322bb5cc1b625ae4893d69466adea8fce976253e7a6a347c01c24fcd1",
+      "thread_environment": {
+        "BLIS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "POLARS_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "thread_pools": [
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.31.188.0"
+        },
+        {
+          "architecture": "SkylakeX",
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.30"
+        },
+        {
+          "filepath": "/nobackup/ashukuma/xr/o_ran_publication/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libgomp",
+          "user_api": "openmp",
+          "version": null
+        }
+      ],
+      "warm": {
+        "coefficient_of_variation": 0.0051036386078891285,
+        "maximum_s": 0.346852484,
+        "mean_s": 0.34344548106666656,
+        "median_reports_per_s": 295757.76386990293,
+        "median_s": 0.343392507,
+        "median_us_per_report": 3.3811453904549977,
+        "minimum_s": 0.340662406,
+        "p05_s": 0.3411014516,
+        "p25_s": 0.34231050350000003,
+        "p75_s": 0.3440033895,
+        "p95_s": 0.346677344,
+        "repetitions": 15,
+        "stdev_s": 0.001752821616876894
+      },
+      "workload": "controller_batch_trace"
+    }
+  ],
+  "system": {
+    "captured_utc": "2026-08-09T13:19:10.547362+00:00",
+    "cgroup_cpu_max": null,
+    "cgroup_memory_max": null,
+    "clock": "time.perf_counter_ns (monotonic, highest available resolution)",
+    "cpu_affinity_visible": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "cpu_model": "Intel(R) Xeon(R) Gold 6246R CPU @ 3.40GHz",
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "kernel": "4.18.0-553.124.1.el8_10.x86_64",
+    "load_average": [
+      1.94,
+      1.43,
+      1.94
+    ],
+    "logical_cpus_visible": 6,
+    "machine": "x86_64",
+    "platform": "Linux-4.18.0-553.124.1.el8_10.x86_64-x86_64-with-glibc2.28"
+  }
+}

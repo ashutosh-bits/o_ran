@@ -1,0 +1,79 @@
+{
+  "calibration_rows": 93989,
+  "feature_columns": [
+    "mac_dl_cqi",
+    "mac_dl_mcs",
+    "mac_dl_brate",
+    "mac_dl_ok",
+    "mac_dl_nok",
+    "phy_ul_pusch_sinr",
+    "phy_ul_pucch_sinr",
+    "phy_ul_mcs",
+    "mac_ul_brate",
+    "mac_ul_ok",
+    "mac_ul_nok",
+    "mac_ul_bsr",
+    "mac_nof_tti",
+    "mac_dl_buffer",
+    "mac_phr",
+    "mac_dl_cqi_offset",
+    "mac_ul_snr_offset",
+    "phy_ul_pusch_rssi",
+    "phy_ul_pucch_rssi",
+    "phy_ul_pucch_ni",
+    "phy_ul_turbo_iters",
+    "phy_ul_n_samples",
+    "phy_ul_n_samples_pucch",
+    "phy_dl_mcs",
+    "phy_dl_n_samples"
+  ],
+  "model_kind": "logistic",
+  "model_path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/models/logistic_seed1729_v1.joblib",
+  "partitions": {
+    "calibration": {
+      "auprc": 0.9903255859185564,
+      "auroc": 0.9892560425754243,
+      "brier": 0.03874321869153064,
+      "n_rows": 93989,
+      "prevalence": 0.49679217780804136
+    },
+    "controller_tune": {
+      "auprc": 0.9797897125186482,
+      "auroc": 0.9603565590870115,
+      "brier": 0.08006486133519268,
+      "n_rows": 83528,
+      "prevalence": 0.6416052102289053
+    },
+    "test": {
+      "auprc": 0.9694177623879537,
+      "auroc": 0.9513426148835659,
+      "brier": 0.08910470103240303,
+      "n_rows": 101561,
+      "prevalence": 0.5648526501314481
+    },
+    "test_seen_rnti": {
+      "auprc": 0.9695937594022443,
+      "auroc": 0.9540977937845934,
+      "brier": 0.08251570288265195,
+      "n_rows": 62185,
+      "prevalence": 0.5451314625713597
+    },
+    "test_unseen_rnti": {
+      "auprc": 0.9696409091682129,
+      "auroc": 0.9471848210086813,
+      "brier": 0.09951045199599176,
+      "n_rows": 39376,
+      "prevalence": 0.5959975619666802
+    },
+    "train": {
+      "auprc": 0.9813712657108289,
+      "auroc": 0.9738384240817706,
+      "brier": 0.06355200220031904,
+      "n_rows": 246193,
+      "prevalence": 0.5574935111883766
+    }
+  },
+  "score_path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/results/scores_logistic_seed1729_v1.parquet",
+  "seed": 1729,
+  "training_rows": 246193
+}

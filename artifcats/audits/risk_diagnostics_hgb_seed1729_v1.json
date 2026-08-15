@@ -1,0 +1,79 @@
+{
+  "calibration_rows": 93989,
+  "feature_columns": [
+    "mac_dl_cqi",
+    "mac_dl_mcs",
+    "mac_dl_brate",
+    "mac_dl_ok",
+    "mac_dl_nok",
+    "phy_ul_pusch_sinr",
+    "phy_ul_pucch_sinr",
+    "phy_ul_mcs",
+    "mac_ul_brate",
+    "mac_ul_ok",
+    "mac_ul_nok",
+    "mac_ul_bsr",
+    "mac_nof_tti",
+    "mac_dl_buffer",
+    "mac_phr",
+    "mac_dl_cqi_offset",
+    "mac_ul_snr_offset",
+    "phy_ul_pusch_rssi",
+    "phy_ul_pucch_rssi",
+    "phy_ul_pucch_ni",
+    "phy_ul_turbo_iters",
+    "phy_ul_n_samples",
+    "phy_ul_n_samples_pucch",
+    "phy_dl_mcs",
+    "phy_dl_n_samples"
+  ],
+  "model_kind": "hgb",
+  "model_path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/models/hgb_seed1729_v1.joblib",
+  "partitions": {
+    "calibration": {
+      "auprc": 0.9946206453493281,
+      "auroc": 0.9943446868689437,
+      "brier": 0.02870488409952793,
+      "n_rows": 93989,
+      "prevalence": 0.49679217780804136
+    },
+    "controller_tune": {
+      "auprc": 0.9891020680849463,
+      "auroc": 0.9787537893572866,
+      "brier": 0.05588759893291167,
+      "n_rows": 83528,
+      "prevalence": 0.6416052102289053
+    },
+    "test": {
+      "auprc": 0.9823468304639247,
+      "auroc": 0.9748077052282944,
+      "brier": 0.06994988184038578,
+      "n_rows": 101561,
+      "prevalence": 0.5648526501314481
+    },
+    "test_seen_rnti": {
+      "auprc": 0.9817310676809448,
+      "auroc": 0.9754816406186604,
+      "brier": 0.06647950255553965,
+      "n_rows": 62185,
+      "prevalence": 0.5451314625713597
+    },
+    "test_unseen_rnti": {
+      "auprc": 0.9839425214486399,
+      "auroc": 0.9747944201722544,
+      "brier": 0.07543051816271809,
+      "n_rows": 39376,
+      "prevalence": 0.5959975619666802
+    },
+    "train": {
+      "auprc": 0.9931315588606747,
+      "auroc": 0.990991789008133,
+      "brier": 0.037407765101999946,
+      "n_rows": 246193,
+      "prevalence": 0.5574935111883766
+    }
+  },
+  "score_path": "/nobackup/ashukuma/xr/o_ran_publication/artifacts/results/scores_hgb_seed1729_v1.parquet",
+  "seed": 1729,
+  "training_rows": 246193
+}
